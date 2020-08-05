@@ -23,6 +23,10 @@ class CreateAnnouncementsTable extends Migration
             $table->string('Description', 100);
             $table->date('PublishedTime',);
             $table->timestamps();
+            // Primero, definir llave foranea
+            $table->unsignedBigInteger('idCategory');
+            //referecia a llave foranea
+            $table->foreign('idCategory')->references('id')->on('categories');
         });
     }
 

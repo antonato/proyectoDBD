@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserAddressesTable extends Migration
+class CreateUserProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateUserAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_addresses', function (Blueprint $table) {
-            $table->id('id');
-            $table->integer('postalCode');
-            $table->string('country');
-            $table->string('region');
-            $table->string('street');
+        Schema::create('user_products', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
             // Primero, definir llave foranea
             $table->unsignedBigInteger('idUser');
-            // Referencia llave foranea
+            $table->unsignedBigInteger('idAnnouncement');
+            //referecia a llave foranea
             $table->foreign('idUser')->references('id')->on('users');
+            $table->foreign('idAnnouncement')->references('id')->on('announcements');
         });
     }
 
@@ -34,6 +32,6 @@ class CreateUserAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_addresses');
+        Schema::dropIfExists('user_products');
     }
 }
