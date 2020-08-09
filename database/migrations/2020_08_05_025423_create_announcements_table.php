@@ -14,19 +14,21 @@ class CreateAnnouncementsTable extends Migration
     public function up()
     {
         Schema::create('announcements', function (Blueprint $table) {
-            $table->id();
-            $table->string('NameProduct', 50);
+            $table->id('id');
+            $table->string('NameProduct');
             $table->float('price', 4, 2);
-            $table->integer('QuialificationAverage');
-            $table->tinyInteger('Disponibility');
-            $table->string('ImageFormat', 4);
-            $table->string('Description', 100);
+            $table->integer('QualificationAverage');
+            $table->boolean('Disponibility');
+            $table->string('ImageFormat');
+            $table->string('Description');
             $table->date('PublishedTime',);
+            $table->string('Category');
             $table->timestamps();
+            
             // Primero, definir llave foranea
-            $table->unsignedBigInteger('idCategory');
+            //$table->unsignedBigInteger('idCategory');
             //referecia a llave foranea
-            $table->foreign('idCategory')->references('id')->on('categories');
+            //$table->foreign('idCategory')->references('id')->on('categories');
         });
     }
 

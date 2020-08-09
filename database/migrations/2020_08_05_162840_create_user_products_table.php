@@ -14,7 +14,7 @@ class CreateUserProductsTable extends Migration
     public function up()
     {
         Schema::create('user_products', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->timestamps();
             // Primero, definir llave foranea
             $table->unsignedBigInteger('idUser');
