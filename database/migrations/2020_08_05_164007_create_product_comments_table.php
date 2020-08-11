@@ -15,7 +15,6 @@ class CreateProductCommentsTable extends Migration
     {
         Schema::create('product_comments', function (Blueprint $table) {
             $table->id('id');
-            $table->timestamps();
             $table->string('content');
             $table->integer('qualification');
             $table->date('publisedTime');
@@ -23,6 +22,7 @@ class CreateProductCommentsTable extends Migration
             $table->unsignedBigInteger('idAnnouncement');
             $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idAnnouncement')->references('id')->on('announcements');
+            $table->timestamps();
         });
     }
 
