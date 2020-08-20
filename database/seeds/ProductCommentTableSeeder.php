@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\productComment;
+use App\ProductComment;
 
 class ProductCommentTableSeeder extends Seeder
 {

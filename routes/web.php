@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Rutas de Permisos
+Route::get('/permissions/all', 'PermissionsContr@index');
