@@ -15,6 +15,7 @@ class Announcement extends Model
         'NameProduct', 'price', 'QualificationAverage', 'Disponibility', 'ImageFormat', 'PublishedTime', 'Category'
     ];
 
+    
 
     //Relacion de uno a muchos userProduct
     public function userProduct(){
