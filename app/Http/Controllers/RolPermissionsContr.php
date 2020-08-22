@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PermissionsContr extends Controller
+class RolPermissionsContr extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class PermissionsContr extends Controller
      */
     public function index()
     {
-        $permissions = \App\Permissions::all();
-        return response()->json($permissions);
+        $rolPermissions = \App\RolPermissions::all();
+        return response()->json($rolPermissions);
     }
 
     /**
@@ -35,12 +35,10 @@ class PermissionsContr extends Controller
      */
     public function store(Request $request)
     {
-        $permissions = new \App\Permissions();
-        $permissions->create = $request->create;
-        $permissions->read = $request->read;
-        $permissions->update = $request->update;
-        $permissions->delete = $request->delete;
-        $permissions->save();
+        $rolPermissions = new \App\RolPermissions();
+        $rolPermissions->idrol = $request->idrol;
+        $rolPermissions->idperm = $request->idperm;
+        $rolPermissions->save();
         return response()->json([
             "message" => "record created"
         ], 201);
@@ -54,8 +52,8 @@ class PermissionsContr extends Controller
      */
     public function show($id)
     {
-        $permissions = \App\Permissions::find($id);
-        return response()->json($permissions);
+        $rolPermissions = \App\RolPermissions::find($id);
+        return response()->json($rolPermissions);
     }
 
     /**
@@ -78,13 +76,11 @@ class PermissionsContr extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rolPermissions = \App\RolPermissions::findOrFail($id);
+        $rolPermissions->update($request->all());
+        $rolPermissions->save();
 
-        $permissions = \App\Permissions::findOrFail($id);
-        $permissions->update($request->all());
-        $permissions->save();
-
-        return response()->json($permissions);
-        
+        return response()->json($rolPermissions);
     }
 
     /**
@@ -95,8 +91,8 @@ class PermissionsContr extends Controller
      */
     public function destroy($id)
     {
-        $permissions =  \App\Permissions::find($id);
-        $permissions->delete();
-        return "permission deleted";
+        $rolPermissions =  \App\RolPermissions::find($id);
+        $rolPermissions->delete();
+        return "rolPermission deleted";
     }
 }

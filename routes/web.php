@@ -30,8 +30,7 @@ Route::get('/transaction/all', 'TransactionContr@index');
 Route::get('/transaction/{id}', 'TransactionContr@show');
 Route::post('/transaction', 'TransactionContr@store');
 Route::delete('/transaction/delete/{id}', 'TransactionContr@destroy');
-Route::post('transaction/{id}', 'TransactionContr@update');
-
+Route::post('/transaction/{id}', 'TransactionContr@update');
 
 
 //Rutas de User
@@ -48,6 +47,7 @@ Route::get('/userAddress/{id}', 'UserAddressContr@show');
 Route::post('/userAddress', 'UserAddressContr@store');
 Route::delete('/userAddress/delete/{id}', 'UserAddressContr@destroy');
 Route::post('/userAddress/{id}', 'UserAddressContr@update');
+
 
 //Rutas de ProductComment
 Route::get('/productComment/all', 'ProductCommentContr@index');
@@ -79,5 +79,29 @@ Route::get('/rol/{id}', 'RolContr@show');
 Route::post('/rol', 'RolContr@store');
 Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::post('/rol/{id}', 'RolContr@update');
+
+
+//Rutas de RolPermissions
+Route::get('/rolPermissions/all', 'RolPermissionsContr@index');
+Route::get('/rolPermissions/{id}', 'RolPermissionsContr@show');
+Route::post('/rolPermissions', 'RolPermissionsContr@store');
+Route::delete('/rolPermissions/delete/{id}', 'RolPermissionsContr@destroy');
+Route::post('/rolPermissions/{id}', 'RolPermissionsContr@update');
+
+
+//Rutas de TransactionProduct
+Route::get('/transactionProduct/all', 'TransactionProductContr@index');
+Route::get('/transactionProduct/{id}', 'TransactionProductContr@show');
+Route::post('/transactionProduct', 'TransactionProductContr@store');
+Route::delete('/transactionProduct/delete/{id}', 'TransactionProductContr@destroy');
+Route::post('/transactionProduct/{id}', 'TransactionProductContr@update');
+
+
+//Rutas de UserProduct
+Route::get('/userProduct/all', 'UserProductContr@index');
+Route::get('/userProduct/{id}', 'UserProductContr@show');
+Route::post('/userProduct', 'UserProductContr@store');
+Route::delete('/userProduct/delete/{id}', 'UserProductContr@destroy');
+Route::post('/userProduct/{id}', 'UserProductContr@update');
 
 

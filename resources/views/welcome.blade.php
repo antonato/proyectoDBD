@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Arriendo en Construcción</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -42,6 +42,7 @@
 
             .content {
                 text-align: center;
+                animation: 
             }
 
             .title {
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Arriendo en Construcción
                 </div>
 
                 <div class="links">
