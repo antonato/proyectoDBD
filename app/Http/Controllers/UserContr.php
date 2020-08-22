@@ -13,7 +13,8 @@ class UserContr extends Controller
      */
     public function index()
     {
-        //
+        $user = \App\User::all();
+        return response()->json($user);
     }
 
     /**
@@ -34,7 +35,14 @@ class UserContr extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new \App\User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        return response()->json([
+            "message" => "record created"
+        ], 201);
     }
 
     /**
@@ -45,7 +53,8 @@ class UserContr extends Controller
      */
     public function show($id)
     {
-        //
+        $user = \App\User::find($id);
+        return response()->json($user);
     }
 
     /**
@@ -68,7 +77,11 @@ class UserContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = \App\User::findOrFail($id);
+        $user->update($request->all());
+        $user->save();
+
+        return response()->json($user);
     }
 
     /**

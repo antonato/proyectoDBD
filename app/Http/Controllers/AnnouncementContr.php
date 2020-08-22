@@ -35,7 +35,7 @@ class AnnouncementContr extends Controller
      */
     public function store(Request $request)
     {
-        $announcement = new Announcement();
+        $announcement = new \App\Announcement();
         $announcement->NameProduct = $request->NameProduct;
         $announcement->price = $request->price;
         $announcement->QualificationAverage = $request->QualificationAverage;
@@ -44,7 +44,7 @@ class AnnouncementContr extends Controller
         $announcement->PublishedTime = $request->PublishedTime;
         $announcement->Category = $request->Category;
         $announcement->save();
-        return responde()->json([
+        return response()->json([
             "message" => "record created"
         ], 201);
     }
@@ -58,7 +58,7 @@ class AnnouncementContr extends Controller
     public function show($id)
     {
         $announcement = \App\Announcement::find($id);
-        return responde()->json($announcement);
+        return response()->json($announcement);
     }
 
     /**
@@ -81,7 +81,11 @@ class AnnouncementContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $announcement = \App\Announcement::findOrFail($id);
+        $announcement->update($request->all());
+        $announcement->save();
+
+        return response()->json($announcement);
     }
 
     /**

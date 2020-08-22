@@ -35,11 +35,11 @@ class RolContr extends Controller
      */
     public function store(Request $request)
     {
-        $rol = new Rol();
+        $rol = new \App\Rol();
         $rol->name = $request->name;
         $rol->description = $request->description;
         $rol->save();
-        return responde()->json([
+        return response()->json([
             "message" => "record created"
         ], 201);
     }
@@ -53,7 +53,7 @@ class RolContr extends Controller
     public function show($id)
     {
         $rol = \App\Rol::find($id);
-        return responde()->json($rol);
+        return response()->json($rol);
     }
 
     /**
@@ -76,7 +76,11 @@ class RolContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rol = \App\Rol::findOrFail($id);
+        $rol->update($request->all());
+        $rol->save();
+
+        return response()->json($rol);
     }
 
     /**

@@ -13,7 +13,8 @@ class ProductCommentContr extends Controller
      */
     public function index()
     {
-        //
+        $productComment = \App\ProductComment::all();
+        return response()->json($productComment);
     }
 
     /**
@@ -34,7 +35,14 @@ class ProductCommentContr extends Controller
      */
     public function store(Request $request)
     {
-        //
+        productComment = new \App\ProductComment();
+        $productComment->content = $request->content;
+        $productComment->qualification = $request->qualification;
+        $productComment->publisedTime = $request->publisedTime;
+        $productComment->save();
+        return response()->json([
+            "message" => "record created"
+        ], 201);
     }
 
     /**
@@ -45,7 +53,8 @@ class ProductCommentContr extends Controller
      */
     public function show($id)
     {
-        //
+        $productComment = \App\ProductComment::find($id);
+        return response()->json($productComment);
     }
 
     /**
@@ -68,7 +77,11 @@ class ProductCommentContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productComment = \App\ProductComment::findOrFail($id);
+        $productComment->update($request->all());
+        $productComment->save();
+
+        return response()->json($productComment);
     }
 
     /**

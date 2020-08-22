@@ -13,7 +13,8 @@ class UserAddressContr extends Controller
      */
     public function index()
     {
-        //
+        $userAddress = \App\UserAddress::all();
+        return response()->json($userAddress);
     }
 
     /**
@@ -34,7 +35,15 @@ class UserAddressContr extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userAddress = new \App\UserAddress();
+        $userAddress->postalCode = $request->postalCode;
+        $userAddress->country = $request->country;
+        $userAddress->region = $request->region;
+        $userAddress->street = $request->street;
+        $userAddress->save();
+        return response()->json([
+            "message" => "record created"
+        ], 201);
     }
 
     /**
@@ -45,7 +54,8 @@ class UserAddressContr extends Controller
      */
     public function show($id)
     {
-        //
+        $userAddress = \App\UserAddress::find($id);
+        return response()->json($userAddress);
     }
 
     /**
@@ -68,7 +78,11 @@ class UserAddressContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userAddress = \App\UserAddress::findOrFail($id);
+        $userAddress->update($request->all());
+        $userAddress->save();
+
+        return response()->json($userAddress);
     }
 
     /**

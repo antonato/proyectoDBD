@@ -13,7 +13,8 @@ class PaymentMethodContr extends Controller
      */
     public function index()
     {
-        //
+        $paymentMethod = \App\PaymentMethod::all();
+        return response()->json($paymentMethod);
     }
 
     /**
@@ -34,7 +35,14 @@ class PaymentMethodContr extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $paymentMethod = new \App\PaymentMethod();
+        $paymentMethod->cardType = $request->cardType;
+        $paymentMethod->cardNumber = $request->cardNumber;
+        $paymentMethod->createAt = $request->createAt;
+        $paymentMethod->save();
+        return response()->json([
+            "message" => "record created"
+        ], 201);
     }
 
     /**
@@ -45,7 +53,8 @@ class PaymentMethodContr extends Controller
      */
     public function show($id)
     {
-        //
+        $paymentMethod = \App\PaymentMethod::find($id);
+        return response()->json($paymentMethod);
     }
 
     /**
@@ -68,7 +77,11 @@ class PaymentMethodContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $paymentMethod = \App\PaymentMethod::findOrFail($id);
+        $paymentMethod->update($request->all());
+        $paymentMethod->save();
+
+        return response()->json($paymentMethod);
     }
 
     /**

@@ -35,13 +35,13 @@ class PermissionsContr extends Controller
      */
     public function store(Request $request)
     {
-        $permissions = new Permissions();
+        $permissions = new \App\Permissions();
         $permissions->create = $request->create;
         $permissions->read = $request->read;
         $permissions->update = $request->update;
         $permissions->delete = $request->delete;
         $permissions->save();
-        return responde()->json([
+        return response()->json([
             "message" => "record created"
         ], 201);
     }
@@ -54,8 +54,8 @@ class PermissionsContr extends Controller
      */
     public function show($id)
     {
-        $permissions = \App\permissions::find($id);
-        return responde()->json($permissions);
+        $permissions = \App\Permissions::find($id);
+        return response()->json($permissions);
     }
 
     /**
@@ -78,7 +78,30 @@ class PermissionsContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $permissions = \App\Permissions::findOrFail($id);
+
+        // if ($request->get('var1') != NULL){
+        //     $permissions->create = $request->get('var1');
+        // }
+        // if ($request->get('var2') != NULL){
+        //     $permissions->read = $request->get('var2');;
+        // }
+        // if ($request->get('var3') != NULL){
+        //     $permissions->update = $request->get('var3');;
+        // }
+        // if ($request->get('var4') != NULL){
+        //     $permissions->delete = $request->get('var4');;
+        // }
+        // $permissions->save();
+    
+        // return response()->json($permissions);
+
+        $permissions = \App\Permissions::findOrFail($id);
+        $permissions->update($request->all());
+        $permissions->save();
+
+        return response()->json($permissions);
+        
     }
 
     /**

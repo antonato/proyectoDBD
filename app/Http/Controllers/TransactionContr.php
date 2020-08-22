@@ -13,7 +13,8 @@ class TransactionContr extends Controller
      */
     public function index()
     {
-        //
+        $transaction = \App\Transaction::all();
+        return response()->json($transaction);
     }
 
     /**
@@ -34,7 +35,14 @@ class TransactionContr extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $transaction = new \App\Transaction();
+        $transaction->since = $request->NameProduct;
+        $transaction->to = $request->price;
+        $transaction->DateTransaction = $request->DateTransaction;
+        $transaction->save();
+        return response()->json([
+            "message" => "record created"
+        ], 201);
     }
 
     /**
@@ -45,7 +53,8 @@ class TransactionContr extends Controller
      */
     public function show($id)
     {
-        //
+        $transaction = \App\Transaction::find($id);
+        return response()->json($transaction);
     }
 
     /**
@@ -68,7 +77,11 @@ class TransactionContr extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $transaction = \App\Transaction::findOrFail($id);
+        $transaction->update($request->all());
+        $transaction->save();
+
+        return response()->json($transaction);
     }
 
     /**
