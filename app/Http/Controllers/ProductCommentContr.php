@@ -92,6 +92,8 @@ class ProductCommentContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productComment =  \App\ProductComment::find($id);
+        $productComment->delete();
+        return "prodcut comment deleted";
     }
 }

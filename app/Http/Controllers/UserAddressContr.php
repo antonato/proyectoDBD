@@ -93,6 +93,8 @@ class UserAddressContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userAddress =  \App\UserAddress::find($id);
+        $userAddress->delete();
+        return "user address deleted";
     }
 }

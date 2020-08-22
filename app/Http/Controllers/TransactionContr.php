@@ -92,6 +92,8 @@ class TransactionContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transaction =  \App\Transaction::find($id);
+        $transaction->delete();
+        return "transaction deleted";
     }
 }

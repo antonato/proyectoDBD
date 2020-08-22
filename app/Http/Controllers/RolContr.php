@@ -91,6 +91,8 @@ class RolContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rol =  \App\Rol::find($id);
+        $rol->delete();
+        return "rol deleted";
     }
 }

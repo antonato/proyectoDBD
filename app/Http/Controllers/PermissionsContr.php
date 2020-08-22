@@ -112,6 +112,8 @@ class PermissionsContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $permissions =  \App\Permissions::find($id);
+        $permissions->delete();
+        return "permission deleted";
     }
 }

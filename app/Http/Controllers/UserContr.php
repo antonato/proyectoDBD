@@ -94,6 +94,6 @@ class UserContr extends Controller
     {
         $user =  \App\User::find($id);
         $user->delete();
-        return "rol deleted";
+        return "user deleted";
     }
 }

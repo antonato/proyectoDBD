@@ -92,6 +92,8 @@ class PaymentMethodContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paymentMethod =  \App\PaymentMethod::find($id);
+        $paymentMethod->delete();
+        return "payment method deleted";
     }
 }
