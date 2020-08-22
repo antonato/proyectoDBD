@@ -22,7 +22,7 @@ $factory->define(Announcement::class, function (Faker $faker) {
         'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 100),
         'QualificationAverage' => $faker->numberBetween($min = 1, $max = 5),
         'Disponibility' => $faker->boolean,
-        'ImageFormat' => $faker->name,
+        'ImageFormat' => $faker->imageUrl($width = 640, $height = 480),
         'Description' => $faker->text,
         'PublishedTime' => $faker->dateTime($max = 'now', $timezone = null),
         // Revisar

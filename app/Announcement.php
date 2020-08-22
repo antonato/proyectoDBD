@@ -38,10 +38,4 @@ class Announcement extends Model
 
     }
 
-    //Relacion de muchos desde Category
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
 }

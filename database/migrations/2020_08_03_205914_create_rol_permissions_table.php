@@ -15,11 +15,11 @@ class CreateRolPermissionsTable extends Migration
     {
         Schema::create('rol_permissions', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('idRol');
-            $table->unsignedBigInteger('idPerm');
+            $table->unsignedBigInteger('idrol');
+            $table->unsignedBigInteger('idperm');
             // References
-            $table->foreign('idRol')->references('id')->on('rols');
-            $table->foreign('idPerm')->references('id')->on('permissions');
+            $table->foreign('idrol')->references('id')->on('rols');
+            $table->foreign('idperm')->references('id')->on('permissions');
             $table->timestamps();
         });
     }
