@@ -35,7 +35,7 @@ class ProductCommentContr extends Controller
      */
     public function store(Request $request)
     {
-        productComment = new \App\ProductComment();
+        $productComment = new \App\ProductComment();
         $productComment->content = $request->content;
         $productComment->qualification = $request->qualification;
         $productComment->publisedTime = $request->publisedTime;

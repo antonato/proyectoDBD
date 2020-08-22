@@ -92,6 +92,8 @@ class UserContr extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user =  \App\User::find($id);
+        $user->delete();
+        return "rol deleted";
     }
 }
