@@ -38,7 +38,7 @@ class PaymentMethodContr extends Controller
         $paymentMethod = new \App\PaymentMethod();
         $paymentMethod->cardType = $request->cardType;
         $paymentMethod->cardNumber = $request->cardNumber;
-        $paymentMethod->createAt = $request->createAt;
+        $paymentMethod->createdAt = $request->createdAt;
         $paymentMethod->save();
         return response()->json([
             "message" => "record created"

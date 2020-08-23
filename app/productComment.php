@@ -13,7 +13,7 @@ class ProductComment extends Model
      * @var array
      */
     protected $fillable = [
-        'content', 'qualification', 'publisedTime'
+        'content', 'qualification', 'publishedTime'
     ];
 
 

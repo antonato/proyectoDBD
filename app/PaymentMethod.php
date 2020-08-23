@@ -13,7 +13,7 @@ class PaymentMethod extends Model
      * @var array
      */
     protected $fillable = [
-        'cardType', 'cardNumber', 'createAt',
+        'cardType', 'cardNumber', 'createAt'
     ];
 
     public function transaction()

@@ -12,7 +12,7 @@ class Rol extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description',
+        'name', 'description'
     ];
 
     //relacion de uno a muchos Rol_Permissions

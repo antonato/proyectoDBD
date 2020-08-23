@@ -36,8 +36,11 @@ class AnnouncementContr extends Controller
     public function store(Request $request)
     {
         $announcement = new \App\Announcement();
+        $user = new \App\User();
+        
         $announcement->NameProduct = $request->NameProduct;
         $announcement->price = $request->price;
+        $announcement->Description = $request->Description;
         $announcement->QualificationAverage = $request->QualificationAverage;
         $announcement->Disponibility = $request->Disponibility;
         $announcement->ImageFormat = $request->ImageFormat;

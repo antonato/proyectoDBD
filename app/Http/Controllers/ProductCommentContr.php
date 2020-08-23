@@ -38,7 +38,7 @@ class ProductCommentContr extends Controller
         $productComment = new \App\ProductComment();
         $productComment->content = $request->content;
         $productComment->qualification = $request->qualification;
-        $productComment->publisedTime = $request->publisedTime;
+        $productComment->publishedTime = $request->publishedTime;
         $productComment->save();
         return response()->json([
             "message" => "record created"

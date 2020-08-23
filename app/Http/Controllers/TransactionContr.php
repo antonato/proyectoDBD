@@ -36,8 +36,8 @@ class TransactionContr extends Controller
     public function store(Request $request)
     {
         $transaction = new \App\Transaction();
-        $transaction->since = $request->NameProduct;
-        $transaction->to = $request->price;
+        $transaction->since = $request->since;
+        $transaction->to = $request->to;
         $transaction->DateTransaction = $request->DateTransaction;
         $transaction->save();
         return response()->json([

@@ -6,10 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class RolPermissions extends Model
 {
-    protected $fillable = [
-        'idrol', 'idperm'
-    ];
-
     public function permissions()
     {
         return $this->belongsTo(Permissions::class);
