@@ -17,7 +17,7 @@ class CreateProductCommentsTable extends Migration
             $table->id('id');
             $table->string('content');
             $table->integer('qualification');
-            $table->date('publisedTime');
+            $table->date('publishedTime');
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idAnnouncement');
             $table->foreign('idUser')->references('id')->on('users');
