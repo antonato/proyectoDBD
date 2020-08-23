@@ -19,14 +19,16 @@ $factory->define(Announcement::class, function (Faker $faker) {
     );
  
     return [
+        'NameProduct' => $NameProduct,
+        'Category' => $Category,
         'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 100),
-        'QualificationAverage' => $faker->numberBetween($min = 1, $max = 5),
-        'Disponibility' => $faker->boolean,
-        'ImageFormat' => $faker->imageUrl($width = 640, $height = 480),
         'Description' => $faker->text,
+        'Disponibility' => $faker->boolean,
+        'QualificationAverage' => $faker->numberBetween($min = 1, $max = 5),
+        'ImageFormat' => $faker->imageUrl($width = 640, $height = 480),    
         'PublishedTime' => $faker->dateTime($max = 'now', $timezone = null),
         // Revisar
-        'Category' => $Category,
-        'NameProduct' => $NameProduct,
+        
+        
     ];
 });

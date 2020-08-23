@@ -16,14 +16,15 @@ class CreateUserAddressesTable extends Migration
         Schema::create('user_addresses', function (Blueprint $table) {
             $table->id('id');
             $table->integer('postalCode');
-            $table->string('country');
+            $table->string('country', 65);
             $table->string('region');
             $table->string('street');
-            $table->timestamps();
             // Primero, definir llave foranea
             $table->unsignedBigInteger('idUser');
             // Referencia llave foranea
             $table->foreign('idUser')->references('id')->on('users');
+
+            $table->timestamps();
         });
     }
 

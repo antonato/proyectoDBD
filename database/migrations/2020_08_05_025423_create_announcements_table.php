@@ -15,11 +15,11 @@ class CreateAnnouncementsTable extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->id('id');
-            $table->string('Category');
-            $table->string('NameProduct');
-            $table->boolean('Disponibility');
+            $table->string('NameProduct', 50);
+            $table->string('Category', 20);
             $table->float('price', 4, 2);
-            $table->string('Description');
+            $table->string('Description', 256);
+            $table->boolean('Disponibility');
             $table->integer('QualificationAverage');
             $table->string('ImageFormat');
             $table->date('PublishedTime',);
