@@ -36,7 +36,9 @@ class UserContr extends Controller
     public function store(Request $request)
     {
         $user = new \App\User();
+        $user->userName = $request->userName;
         $user->name = $request->name;
+        $user->surname = $request->surname;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();

@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class TransactionProduct extends Model
 {
+
+    protected $fillable = [
+        'idTransaction', 'idAnnouncement'
+    ];
+
     public function announcement()
     {
         return $this->belongsTo(Announcement::class);

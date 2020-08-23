@@ -28,7 +28,7 @@ class CreateTriggerAddPerm extends Migration
         DB::unprepared('
             CREATE TRIGGER tg_addPerm
             AFTER INSERT ON permissions
-            FOR EACH ROW 
+            FOR EACH ROW
             EXECUTE PROCEDURE addPerm();
         ');
     }

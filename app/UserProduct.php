@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserProduct extends Model
 {
+
+    protected $fillable = [
+        'idUser', 'idAnnouncement'
+    ];
+
     //relacion de muchos desde User
     public function user()
     {
