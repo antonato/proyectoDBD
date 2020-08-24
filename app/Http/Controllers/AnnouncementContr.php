@@ -99,7 +99,7 @@ class AnnouncementContr extends Controller
      */
     public function destroy($id)
     {
-        $announcement =  \App\Annoucement::find($id);
+        $announcement =  \App\Announcement::find($id);
         $announcement->delete();
         return "announcement deleted";
     }

@@ -1,0 +1,146 @@
+/**
+* Template Name: A-rriendo
+* Author: Antonina Arriagada, Linda Muñoz, Francisco Nuñez, Dennis Urrutia
+*/
+
+/**
+*Colores de Referencia:
+*Verde: #095D6A
+*Naranjo: #F57B51
+*Crema: #FDF6F0
+*Amarillo: #FBBC58;
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Nunito Sans", sans-serif;
+    color: #444444;
+  }
+  
+  a {
+    color: #095D6A !important;
+  }
+  
+  a:hover{
+    color: #00879c !important;
+    text-decoration: none !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+
+  #header .container{
+    max-width: 98% !important;
+  }
+  
+  #header.header-transparent {
+    background: transparent;
+  }
+  
+  #header.header-scrolled {
+    background: #00004d;
+    padding: 0;
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.38);
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.38);
+  }
+  
+  
+  
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Others and Specifics
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+
+#login{
+  background-image: url("/assets/img/fondoGrande.png");
+  background-size: cover;
+}
+
+.loginback{
+  background-color: #095D6A !important;
+  border-radius: 30px 30px 30px 30px !important;
+  -moz-border-radius: 30px 30px 30px 30px !important;
+  -webkit-border-radius: 30px 30px 30px 30px !important;
+  border: 0px solid #000000 !important;
+  padding: 10px;
+}
+
+.loginback  h1, h2, h5, a{
+
+  color: #ffffff !important;
+
+}
+a:hover{
+  color: #F57B51 !important;
+  text-decoration: none !important;
+}
+
+.loginback .btn{
+  background-color: #ffffff !important;
+  color: #F57B51 !important;
+  border-radius: 40px 40px 40px 40px !important;
+  -moz-border-radius: 40px 40px 40px 40px !important;
+  -webkit-border-radius: 40px 40px 40px 40px !important;
+  border: 0px solid #000000 !important;
+}
+
+.loginback .form-input{
+  color: #ffffff !important;
+  background-color: #095D6A;
+  font-family: 'DM Sans', sans-serif;
+  appearance: none;
+  font-size: 12px;
+}
+
+.loginback input::placeholder{
+  color: #a5a5a5;
+}
+
+.form-input {
+  border:none;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 0.4s 0.4s ease; 
+  text-indent: -100%;
+  opacity: 1;
+}
+
+.title {
+  margin-left: 20px;
+  
+}
+
+.title h1{
+  font-weight: 300;
+  font-family: "Nunito Sans", sans-serif;
+}
