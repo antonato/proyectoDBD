@@ -19,9 +19,9 @@ class CreateAnnouncementAddressesTable extends Migration
             $table->string('region');
             $table->string('street');
             // Primero, definir llave foranea
-            $table->unsignedBigInteger('idAnnouncement');
+            $table->unsignedBigInteger('id_announcement');
             // Referencia llave foranea
-            $table->foreign('idAnnouncement')->references('id')->on('announcements');
+            $table->foreign('id_announcement')->references('id')->on('announcements');
             $table->timestamps();
         });
     }

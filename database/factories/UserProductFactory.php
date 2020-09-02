@@ -9,7 +9,7 @@ $factory->define(UserProduct::class, function (Faker $faker) {
     $idUser = App\User::pluck('id')->toArray();
     $idAnnouncement = App\Announcement::pluck('id')->toArray();
     return [
-        'idUser' => $faker->randomElement($idUser),
-        'idAnnouncement' => $faker->randomElement($idAnnouncement),
+        'id_user' => $faker->randomElement($idUser),
+        'id_announcement' => $faker->randomElement($idAnnouncement),
     ];
 });

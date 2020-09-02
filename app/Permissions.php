@@ -16,5 +16,4 @@ class Permissions extends Model
         return $this->hasMany(RolPermissions::class);
         
     }
-
 }

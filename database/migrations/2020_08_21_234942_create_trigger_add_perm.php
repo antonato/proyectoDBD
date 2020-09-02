@@ -18,7 +18,7 @@ class CreateTriggerAddPerm extends Migration
             DECLARE lastID INT;
             BEGIN
                 SELECT * INTO lastID FROM permissions ORDER BY id DESC LIMIT 1;
-                INSERT INTO rol_permissions (idperm, idrol) VALUES (lastID, 1);
+                INSERT INTO rol_permissions (id_perm, id_rol) VALUES (lastID, 1);
                 RETURN New;
             END;
             $paAddPerm$

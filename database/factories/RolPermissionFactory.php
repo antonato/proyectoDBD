@@ -9,7 +9,7 @@ $factory->define(RolPermissions::class, function (Faker $faker) {
     $idRol = App\Rol::pluck('id')->toArray();
     $idPerm = App\Permissions::pluck('id')->toArray();
     return [
-        'idrol' => $faker->randomElement($idRol),
-        'idperm' => $faker->randomElement($idPerm),
+        'id_rol' => $faker->randomElement($idRol),
+        'id_perm' => $faker->randomElement($idPerm),
     ];
 });

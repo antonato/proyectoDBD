@@ -9,7 +9,7 @@ $factory->define(transactionProduct::class, function (Faker $faker) {
     $idTransaction = App\Transaction::pluck('id')->toArray();
     $idAnnouncement = App\Announcement::pluck('id')->toArray();
     return [
-        'idTransaction' => $faker->randomElement($idTransaction),
-        'idAnnouncement' => $faker->randomElement($idAnnouncement),
+        'id_transaction' => $faker->randomElement($idTransaction),
+        'id_announcement' => $faker->randomElement($idAnnouncement),
     ];
 });

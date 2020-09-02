@@ -40,20 +40,43 @@
                     <div class="d-flex justify-content-center mt-1 mb-2">
                         <h5>Login</h5>
                     </div>
-                    <form method="post" action="">
+
+                    <!--
+                    <form method="post" action="{{ route('login') }}">
                         <div class="form-group d-flex flex-column">
                             <input type="username" class="form-input mt-2 mb-4" id="username"
                                 aria-describedby="emailHelp" placeholder="Username">
                             <input type="password" class="form-input" id="password" aria-describedby="emailHelp"
                                 placeholder="Password">
                             <small id="emailHelp" class="form-text text-muted">
-                                <a href="" style="font-size: 10px">Has olvidado tu contraseña?</a>
+                                <a href="" style="font-size: 10px">¿Has olvidado tu contraseña?</a>
                             </small>
                         </div>
                     </form>
                     <div class="d-flex justify-content-center">
                         <a href="#" class="btn pr-4 pl-4">Go</a>
                     </div>
+                    -->
+                    
+                    <!-- Login -->
+                    <form method = "POST" action="{{ route('login') }}">
+                        <div class='form-group'>
+                            <label for='userName'>Username</label>
+                            <input class='form-control' 
+                                type='userName' 
+                                name='userName' 
+                                placeholder='ingresa tu nombre de usuario'>
+                        </div>
+
+                        <div class='form-group'>
+                            <label for='password'>Password</label>
+                            <input class='form-control' 
+                                type='password' 
+                                name='password' 
+                                placeholder='ingresa tu contraseña'>
+                        </div>
+                        <button class="btn btn-primary btn-block">Acceder</button>
+
                 </div>
             </div>
         </div>

@@ -80,3 +80,5 @@ Route::post('/rol', 'RolContr@store');
 Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::put('/rol/{id}', 'RolContr@update');
 
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
