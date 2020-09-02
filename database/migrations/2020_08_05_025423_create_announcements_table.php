@@ -18,7 +18,7 @@ class CreateAnnouncementsTable extends Migration
             $table->string('NameProduct', 50);
             $table->string('Category', 20);
             $table->float('Price', 4, 2);
-            $table->date('Price/Time');
+            $table->date('PriceXTime');
             $table->string('Description', 256);
             $table->boolean('Disponibility');
             $table->integer('QualificationAverage');

@@ -12,7 +12,7 @@ class Announcement extends Model
      * @var array
      */
     protected $fillable = [
-        'NameProduct', 'price', 'QualificationAverage', 'Disponibility', 'ImageFormat', 'PublishedTime', 'Category'
+        'NameProduct', 'Price', 'PriceXTime', 'QualificationAverage', 'Disponibility', 'ImageFormat', 'PublishedTime', 'Category'
     ];
 
     

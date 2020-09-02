@@ -39,7 +39,8 @@ class AnnouncementContr extends Controller
         $user = new \App\User();
         
         $announcement->NameProduct = $request->NameProduct;
-        $announcement->price = $request->price;
+        $announcement->Price = $request->price;
+        $announcement->PriceXTime = $request->PriceXTime;
         $announcement->Description = $request->Description;
         $announcement->QualificationAverage = $request->QualificationAverage;
         $announcement->Disponibility = $request->Disponibility;

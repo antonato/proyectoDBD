@@ -22,7 +22,7 @@ $factory->define(Announcement::class, function (Faker $faker) {
         'NameProduct' => $NameProduct,
         'Category' => $Category,
         'Price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 100),
-        'Price/Time' =>$faker->dateTime($max = 'now', $timezone = null),
+        'PriceXTime' =>$faker->dateTime($max = 'now', $timezone = null),
         'Description' => $faker->text,
         'Disponibility' => $faker->boolean,
         'QualificationAverage' => $faker->numberBetween($min = 1, $max = 5),
