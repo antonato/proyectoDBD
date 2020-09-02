@@ -17,11 +17,11 @@ class CreateUserProductsTable extends Migration
             $table->id('id');
             $table->timestamps();
             // Primero, definir llave foranea
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_announcement');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('announcement_id');
             //referecia a llave foranea
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_announcement')->references('id')->on('announcements');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('announcement_id')->references('id')->on('announcements');
         });
     }
 

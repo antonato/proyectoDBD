@@ -21,7 +21,8 @@ $factory->define(Announcement::class, function (Faker $faker) {
     return [
         'NameProduct' => $NameProduct,
         'Category' => $Category,
-        'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 100),
+        'Price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 100),
+        'Price/Time' =>$faker->dateTime($max = 'now', $timezone = null),
         'Description' => $faker->text,
         'Disponibility' => $faker->boolean,
         'QualificationAverage' => $faker->numberBetween($min = 1, $max = 5),

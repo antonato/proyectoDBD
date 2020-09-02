@@ -17,12 +17,13 @@ class CreateAnnouncementsTable extends Migration
             $table->id('id');
             $table->string('NameProduct', 50);
             $table->string('Category', 20);
-            $table->float('price', 4, 2);
+            $table->float('Price', 4, 2);
+            $table->date('Price/Time');
             $table->string('Description', 256);
             $table->boolean('Disponibility');
             $table->integer('QualificationAverage');
             $table->string('ImageFormat');
-            $table->date('PublishedTime',);
+            $table->date('PublishedTime');
             
             $table->timestamps();
         });

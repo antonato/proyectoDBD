@@ -8,7 +8,7 @@ class UserProduct extends Model
 {
 
     protected $fillable = [
-        'idUser', 'idAnnouncement'
+        'user_id', 'announcement_id'
     ];
 
     //relacion de muchos desde User
