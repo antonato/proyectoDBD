@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('createAnnouncement');
+    return view('register');
 });
 
 //Rutas de Permisos
