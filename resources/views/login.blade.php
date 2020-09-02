@@ -34,6 +34,7 @@
                 <circle cx="124" cy="48" r="13" fill="#fbbc58" />
             </svg>
         </div>
+        
         <div class="d-flex justify-content-center">
             <div class="card loginback" style="width: 14rem;">
                 <div class="card-body">
@@ -41,7 +42,7 @@
                         <h5>Login</h5>
                     </div>
 
-                    <!--
+                    
                     <form method="post" action="{{ route('login') }}">
                         <div class="form-group d-flex flex-column">
                             <input type="username" class="form-input mt-2 mb-4" id="username"
@@ -56,27 +57,6 @@
                     <div class="d-flex justify-content-center">
                         <a href="#" class="btn pr-4 pl-4">Go</a>
                     </div>
-                    -->
-                    
-                    <!-- Login -->
-                    <form method = "POST" action="{{ route('login') }}">
-                        <div class='form-group'>
-                            <label for='userName'>Username</label>
-                            <input class='form-control' 
-                                type='userName' 
-                                name='userName' 
-                                placeholder='ingresa tu nombre de usuario'>
-                        </div>
-
-                        <div class='form-group'>
-                            <label for='password'>Password</label>
-                            <input class='form-control' 
-                                type='password' 
-                                name='password' 
-                                placeholder='ingresa tu contraseña'>
-                        </div>
-                        <button class="btn btn-primary btn-block">Acceder</button>
-
                 </div>
             </div>
         </div>
