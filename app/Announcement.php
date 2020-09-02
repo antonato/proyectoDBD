@@ -15,7 +15,6 @@ class Announcement extends Model
         'NameProduct', 'Price', 'PriceXTime', 'QualificationAverage', 'Disponibility', 'ImageFormat', 'PublishedTime', 'Category'
     ];
 
-    
 
     //Relacion de uno a muchos userProduct
     public function userProduct(){
@@ -35,6 +34,13 @@ class Announcement extends Model
     public function productComment(){
 
         return $this->hasMany(ProductComment::class);
+
+    }
+
+    //Relacion de uno a uno announcement
+    public function announcementAddress(){
+
+        return $this->hasOne(AnnouncementAddress::class);
 
     }
 

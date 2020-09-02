@@ -36,8 +36,7 @@ class AnnouncementContr extends Controller
     public function store(Request $request)
     {
         $announcement = new \App\Announcement();
-        $user = new \App\User();
-        
+       
         $announcement->NameProduct = $request->NameProduct;
         $announcement->Price = $request->price;
         $announcement->PriceXTime = $request->PriceXTime;
@@ -62,7 +61,11 @@ class AnnouncementContr extends Controller
     public function show($id)
     {
         $announcement = \App\Announcement::find($id);
-        return response()->json($announcement);
+        $user = \App\UserProduct::find($id)->user;
+        $address = \App\Announcement::find($id)->announcementAddress;
+        // echo $address;
+        // return response()->json($announcement);
+        return view('announcement', ['data' => array($announcement, $user, $address)]);
     }
 
     /**

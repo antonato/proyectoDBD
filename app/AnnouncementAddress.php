@@ -15,7 +15,7 @@ class AnnouncementAddress extends Model
         'country', 'region', 'street'
     ];
 
-    public function transaction()
+    public function announcement()
     {
         return $this->belongsTo(Announcement::class);
     }

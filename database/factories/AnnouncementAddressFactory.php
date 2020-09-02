@@ -11,6 +11,6 @@ $factory->define(AnnouncementAddress::class, function (Faker $faker) {
         'country' => $faker->country,
         'region' => $faker->state,
         'street' => $faker->address,
-        'announcement_id' => $faker->randomElement($idAnnouncement),
+        'announcement_id' => $faker->unique()->randomElement($idAnnouncement),
     ];
 });
