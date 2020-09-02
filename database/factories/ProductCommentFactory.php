@@ -12,7 +12,7 @@ $factory->define(productComment::class, function (Faker $faker) {
     return [
         'content' => $faker->text($maxNbChars = 256),
         'qualification' => $faker->numberBetween($min = 1, $max = 5),
-        'publisedTime' => $faker->dateTime($max = 'now', $timezone = null),
+        'publishedTime' => $faker->dateTime($max = 'now', $timezone = null),
         'idUser' => $faker->randomElement($idUser),
         'idAnnouncement' => $faker->randomElement($idAnnouncement),
     ];
