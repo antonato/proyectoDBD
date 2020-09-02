@@ -8,7 +8,7 @@ class TransactionProduct extends Model
 {
 
     protected $fillable = [
-        'idTransaction', 'idAnnouncement'
+        'transaction_id', 'announcement_id'
     ];
 
     public function announcement()

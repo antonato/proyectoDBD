@@ -20,9 +20,9 @@ class CreateUserAddressesTable extends Migration
             $table->string('region');
             $table->string('street');
             // Primero, definir llave foranea
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('user_id');
             // Referencia llave foranea
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
         });

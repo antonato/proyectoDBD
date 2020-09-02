@@ -20,11 +20,11 @@ class CreateTransactionsTable extends Migration
             $table->date('DateTransaction');
             $table->timestamps();
             // Primero, definir llave foranea
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_paymentmethod');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('paymentmethod_id');
             //forean key
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_paymentmethod')->references('id')->on('payment_methods');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('paymentmethod_id')->references('id')->on('payment_methods');
         });
     }
 

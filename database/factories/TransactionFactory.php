@@ -12,8 +12,8 @@ $factory->define(Transaction::class, function (Faker $faker) {
         'since' => $faker -> date($format = 'Y-m-d', $max = 'now'),
         'to' => $faker -> date($format = 'Y-m-d', $max = 'now', $min = 'since'),
         'DateTransaction' => $faker -> date($format = 'Y-m-d', $max = 'now'),
-        'id_user' => $faker->randomElement($idUser),
-        'id_paymentmethod' => $faker->randomElement($idPaymentMethod),
+        'user_id' => $faker->randomElement($idUser),
+        'paymentmethod_id' => $faker->randomElement($idPaymentMethod),
 
 
     ];

@@ -12,6 +12,6 @@ $factory->define(UserAddress::class, function (Faker $faker) {
         'country' => $faker->country,
         'region' => $faker->state,
         'street' => $faker->address,
-        'id_user' => $faker->randomElement($idUser),
+        'user_id' => $faker->randomElement($idUser),
     ];
 });

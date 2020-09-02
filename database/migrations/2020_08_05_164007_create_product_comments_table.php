@@ -18,10 +18,10 @@ class CreateProductCommentsTable extends Migration
             $table->string('content');
             $table->integer('qualification');
             $table->date('publishedTime');
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_announcement');
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_announcement')->references('id')->on('announcements');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('announcement_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('announcement_id')->references('id')->on('announcements');
             $table->timestamps();
         });
     }
