@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('register');
+    return view('home');
 });
 
 //Rutas de Permisos
@@ -36,7 +36,7 @@ Route::put('/transaction/{id}', 'TransactionContr@update');
 //Rutas de User
 Route::get('/user/all', 'UserContr@index');
 Route::get('/user/{id}', 'UserContr@show');
-Route::post('/user', 'UserContr@store');
+Route::post('/user', 'UserContr@store')->name('user.store');
 Route::delete('/user/delete/{id}', 'UserContr@destroy');
 Route::put('/user/{id}', 'UserContr@update');
 
@@ -81,4 +81,20 @@ Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::put('/rol/{id}', 'RolContr@update');
 
 
-Route::post('login', 'Auth\LoginController@login')->name('login');
+#Route::get('/home', 'HomeController@index')->name('home');
+
+//Rutas de vistas
+Route::get('registro', function(){
+        return view('register');
+})->name('register');
+
+Route::get('ingresar', function(){
+    return view('login');
+})->name('login');
+
+Route::get('publicación', function(){
+    return view('announcement');
+})->name('announcement');
+Auth::routes();
+
+

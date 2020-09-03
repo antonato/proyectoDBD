@@ -42,20 +42,21 @@
                         <h5>Login</h5>
                     </div>
 
-                    
-                    <form method="post" action="{{ route('login') }}">
+                    <form>
                         <div class="form-group d-flex flex-column">
                             <input type="username" class="form-input mt-2 mb-4" id="username"
                                 aria-describedby="emailHelp" placeholder="Username">
                             <input type="password" class="form-input" id="password" aria-describedby="emailHelp"
                                 placeholder="Password">
+
                             <small id="emailHelp" class="form-text text-muted">
-                                <a href="" style="font-size: 10px">¿Has olvidado tu contraseña?</a>
+                                <a href="register" style="font-size: 10px" >¿No tienes una cuenta?</a>
                             </small>
+
                         </div>
                     </form>
                     <div class="d-flex justify-content-center">
-                        <a href="#" class="btn pr-4 pl-4">Go</a>
+                        <a href="{{  route('register')  }}" class="btn pr-4 pl-4">Inicia sesión</a>
                     </div>
                 </div>
             </div>
