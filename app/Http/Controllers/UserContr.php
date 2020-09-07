@@ -99,14 +99,6 @@ class UserContr extends Controller
         return "user deleted";
     }
 
-    public function showRegister(){
-        return view('register');
-    }
-
-      public function showLoginTest(){
-        return view('pruebaLogin');
-    }
-
     public function getUserByEmail(Request $request){
         $email =$request->input('email');
         $password = $request->input('password');
@@ -117,8 +109,5 @@ class UserContr extends Controller
             return view('home');
         }
         return $user;
-
     }
-
-    //getUserByUserName
 }
