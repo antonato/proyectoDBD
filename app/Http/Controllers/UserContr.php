@@ -98,4 +98,27 @@ class UserContr extends Controller
         $user->delete();
         return "user deleted";
     }
+
+    public function showRegister(){
+        return view('register');
+    }
+
+      public function showLoginTest(){
+        return view('pruebaLogin');
+    }
+
+    public function getUserByEmail(Request $request){
+        $email =$request->input('email');
+        $password = $request->input('password');
+        $condition = ['email' => $email, 'password'=> $password];
+        $user =  \App\User::where($condition)->first();
+
+        if(empty($user)){
+            return view('home');
+        }
+        return $user;
+
+    }
+
+    //getUserByUserName
 }

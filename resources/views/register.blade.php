@@ -61,23 +61,22 @@
             <div class="title m-b-md">
                 Registro uwu
             </div>
-                
-            <form class="needs-validation" novalidate> 
+            <form action="{{ action('UserContr@store')}}" method="post">
                 <div class="form-group">
-                    <input type="username" class="form-control" id="username" placeholder="Nombre de usuario" required>
+                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" required>
                     <div class="invalid-feedback">
                         Utiliza un nombre de usuario de 6 a 8 caracteres
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Nombre" required>
+                        <input type="text" name="name" class="form-control" placeholder="Nombre" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Apellido" required>
+                        <input type="text" name ="surname" class="form-control" placeholder="Apellido" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
@@ -86,13 +85,13 @@
                 <br>
                 <div class="row">
                     <div class="col">
-                        <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico" required>
                         <div class="invalid-feedback">
                             Dirección de correo inválida
                         </div>
                     </div>
                     <div class="col">
-                        <input type="password" class="form-control" placeholder="Contraseña" required>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
                         <div class="invalid-feedback">
                             Utiliza una contraseña de 6 a 15 digitos
                         </div>

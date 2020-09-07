@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 //Rutas de Permisos
 Route::get('/permissions/all', 'PermissionsContr@index');
 Route::get('/permissions/{id}', 'PermissionsContr@show');
@@ -81,11 +82,11 @@ Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::put('/rol/{id}', 'RolContr@update');
 
 
-#Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 //Rutas de vistas
 Route::get('registro', function(){
-        return view('register');
+      return view('register');
 })->name('register');
 
 Route::get('ingresar', function(){
@@ -95,6 +96,14 @@ Route::get('ingresar', function(){
 Route::get('publicación', function(){
     return view('announcement');
 })->name('announcement');
+
+Route::get('/registro', 'UserContr@showRegister');
+
+Route::get('/pruebaLogin', 'UserContr@showLoginTest');
+
+Route::get('/pepe', 'UserContr@getUserByEmail');
+
+
 Auth::routes();
 
-
+//Route::get('/home', 'HomeController@index')->name('home');
