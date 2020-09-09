@@ -98,6 +98,3 @@ Route::get('publicación', function(){
 })->name('announcement');
 
 Auth::routes();
-
-// Ruta de testeo
-Route::get('/pepe', 'UserContr@getUserByEmail');
