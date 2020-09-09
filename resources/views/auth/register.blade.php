@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Registro</title>
-
     <style>
         .m-b-md {
                 margin-bottom: 30px;
@@ -46,12 +45,12 @@
 @section('content')
 <body id="register">
     <div class="flex-center position-ref full-height">
-
+        <script src = "../js/validar.js"></script>
         <div class="content">
             <div class="title m-b-md">
                 Registro uwu
             </div>
-            <form action="{{ action('UserContr@store')}}" method="post">
+            <form action="{{ action('UserContr@store')}}" method="post" onsubmit="return validar();">
                 <div class="form-group">
                     <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" required>
                     <div class="invalid-feedback">
@@ -60,13 +59,13 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="name" class="form-control" placeholder="Nombre" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                     <div class="col">
-                        <input type="text" name ="surname" class="form-control" placeholder="Apellido" required>
+                        <input type="text" name ="surname" class="form-control" id="surName" placeholder="Apellido" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
@@ -81,7 +80,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" required>
                         <div class="invalid-feedback">
                             Utiliza una contraseña de 6 a 15 digitos
                         </div>
