@@ -44,28 +44,34 @@
 @extends('layouts.app')
 @section('content')
 <body id="register">
+    @if(count($errors)>0)
+        @foreach($errors->all() as $error)
+            <div class="alert alert-danger" role="alert">
+                {{ $error }}
+            </div>
+        @endforeach
+    @endif
     <div class="flex-center position-ref full-height">
-        <script src = "../js/validar.js"></script>
         <div class="content">
             <div class="title m-b-md">
                 Registro uwu
             </div>
-            <form action="{{ action('UserContr@store')}}" method="post" onsubmit="return validar();">
+            <form action="{{ action('UserContr@store')}}" method="post">
                 <div class="form-group">
-                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" required>
+                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario">
                     <div class="invalid-feedback">
                         Utiliza un nombre de usuario de 6 a 8 caracteres
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre">
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                     <div class="col">
-                        <input type="text" name ="surname" class="form-control" id="surName" placeholder="Apellido" required>
+                        <input type="text" name ="surname" class="form-control" id="surName" placeholder="Apellido">
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
@@ -74,13 +80,13 @@
                 <br>
                 <div class="row">
                     <div class="col">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico">
                         <div class="invalid-feedback">
                             Dirección de correo inválida
                         </div>
                     </div>
                     <div class="col">
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" required>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña">
                         <div class="invalid-feedback">
                             Utiliza una contraseña de 6 a 15 digitos
                         </div>
@@ -97,8 +103,8 @@
             </div>
         </div>
     </div>
+    
 </body>
-@endsection
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields

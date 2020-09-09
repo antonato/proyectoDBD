@@ -36,8 +36,10 @@ class UserContr extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CrearUsuarioRequest $request)
+    /*public function store(CrearUsuarioRequest $request)
     {
+
+        
         $user = new \App\User();
         $user->userName = $request->userName;
         $user->name = $request->name;
@@ -49,6 +51,24 @@ class UserContr extends Controller
             "message" => "record created"
         ], 201);
     }
+    */
+    public function store(CrearUsuarioRequest $request)
+    {
+        $user = new \App\User();
+        $user->userName = $request->userName;
+        $user->name = $request->name;
+        $user->surname = $request->surname;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+        return redirect()->route('home')->with('status', 'Success!');
+        /*return response()->json([
+            "message" => "record created"
+        ], 201);
+        */
+    }
+    
+
 
     /**
      * Display the specified resource.

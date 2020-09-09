@@ -25,11 +25,11 @@ class EditarUsuarioRequest extends FormRequest
     {
         return [
             //Usuario
-            'Username' => 'required|string|max:8',
-            'Name' => 'required|string|max:30',
-            'Surname' => 'required|string|max:20',
-            'Password' => 'required|string|max:15',
-            'Email' => 'required|string|max:30',
+            'username' => 'required|string|max:8',
+            'name' => 'required|string|max:30',
+            'surname' => 'required|string|max:20',
+            'password' => 'required|string|max:15',
+            'email' => 'required|string|max:30',
         ];
     }
 }
