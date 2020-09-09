@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CrearUsuarioRequest;
+use App\Http\Requests\EditarUsuarioRequest;
+
 class UserContr extends Controller
 {
     /**
@@ -33,7 +36,7 @@ class UserContr extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CrearUsuarioRequest $request)
     {
         $user = new \App\User();
         $user->userName = $request->userName;
@@ -77,7 +80,7 @@ class UserContr extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditarUsuarioRequest $request, $id)
     {
         $user = \App\User::findOrFail($id);
         $user->update($request->all());
