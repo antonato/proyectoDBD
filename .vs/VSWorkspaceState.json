@@ -2,13 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\public\\css",
+    "\\app\\Http\\Requests",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\layouts",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\pruebaLogin.blade.php",
+  "SelectedNode": "\\app\\Http\\Requests\\EditarUsuarioRequest.php",
   "PreviewInSolutionExplorer": false
 }
