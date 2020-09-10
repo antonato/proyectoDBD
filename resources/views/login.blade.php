@@ -42,7 +42,7 @@
                         <h5>Login</h5>
                     </div>
 
-                    <form>
+                    <form action="/usuario" method="get">
                         <div class="form-group d-flex flex-column">
                             <input type="username" class="form-input mt-2 mb-4" id="username"
                                 aria-describedby="emailHelp" placeholder="Username">

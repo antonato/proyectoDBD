@@ -63,9 +63,15 @@ class AnnouncementContr extends Controller
         $announcement = \App\Announcement::find($id);
         $user = \App\UserProduct::find($id)->user;
         $address = \App\Announcement::find($id)->announcementAddress;
-        // echo $address;
-        // return response()->json($announcement);
-        return view('announcement', ['data' => array($announcement, $user, $address)]);
+        $comments = \App\Announcement::find($id)->productComment;
+
+        foreach ($comments as $comment) {
+            $userComment = \App\productComment::find($comment->id)->user;
+            $userName = $userComment->userName;
+            $comment->user_id = $userName;     
+        }
+
+        return view('announcement', ['data' => array($announcement, $user, $address, $comments)]);
     }
 
     /**
