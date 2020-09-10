@@ -18,7 +18,7 @@
 </head>
 
 <body id="login">
-    <div class="d-flex align-items-center mt-4 ml-5 mb-4">
+    <div class="d-flex align-items-center pt-5 ml-5 mb-4">
         <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="" width="100px" />
         <div class="title">
             <h1>Compra lo que necesites,</h1>
@@ -52,7 +52,7 @@
                                 <a href="{{  route('auth.register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>
                             </small>
                         </div>
-                        <div>
+                        <div class="d-flex justify-content-center">
                             <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar">
                         </div>
                     </div>
