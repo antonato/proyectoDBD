@@ -6,44 +6,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Registro</title>
-    <style>
-        .m-b-md {
-                margin-bottom: 30px;
-            }
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .title {
-                font-size: 60px;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
-@extends('layouts.app')
-@section('content')
+<x-navbar login=true></x-navbar>
 <body id="register">
+
     @if(count($errors)>0)
         @foreach($errors->all() as $error)
             <div class="alert alert-danger" role="alert">
@@ -51,56 +28,52 @@
             </div>
         @endforeach
     @endif
-    <div class="flex-center position-ref full-height">
+
+    <div class="container flex-center position-ref register-full-height">
         <div class="content">
-            <div class="title m-b-md">
-                Registro uwu
+            <center>
+            <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="logotipo de página" width="150px"/><br>
+            </center>
+            <div class="register-title register-m-b-md ">
+                ¡Únete a nosotros!
             </div>
-            <form action="{{ action('UserContr@store')}}" method="post">
-                <div class="form-group">
-                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario">
+            <form id="validationForm" action="{{ action('UserContr@store')}}" method="post" class="needs-validation" novalidate>
+                <div class="register-form-group">
+                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" required>
                     <div class="invalid-feedback">
                         Utiliza un nombre de usuario de 6 a 8 caracteres
                     </div>
                 </div>
+                <br>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                     <div class="col">
-                        <input type="text" name ="surname" class="form-control" id="surName" placeholder="Apellido">
+                        <input type="text" name ="surname" class="form-control" id="surname" placeholder="Apellido" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico">
-                        <div class="invalid-feedback">
-                            Dirección de correo inválida
-                        </div>
-                    </div>
-                    <div class="col">
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña">
-                        <div class="invalid-feedback">
-                            Utiliza una contraseña de 6 a 15 digitos
-                        </div>
-                    </div>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                <div class="invalid-feedback">
+                    Dirección de correo inválida
                 </div>
                 <br>
-                <div class="d-flex justify-content-center"> 
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" required>
+                <div class="invalid-feedback">
+                    Utiliza una contraseña de 6 a 15 digitos
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Registrarse">
                 </div>
               </form>
-            <div class="flex-center flex-column">
-                <a href="{{  route('auth.login')  }}"> Ir a login </a>
-                <a href="{{  route('announcement')  }}"> Ir a publicación </a>
-            </div>
         </div>
     </div>
     

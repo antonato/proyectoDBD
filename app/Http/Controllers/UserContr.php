@@ -30,28 +30,7 @@ class UserContr extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    /*public function store(CrearUsuarioRequest $request)
-    {
-
-        
-        $user = new \App\User();
-        $user->userName = $request->userName;
-        $user->name = $request->name;
-        $user->surname = $request->surname;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
-    }
-    */
+    
     public function store(CrearUsuarioRequest $request)
     {
         $user = new \App\User();
@@ -61,15 +40,15 @@ class UserContr extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
-        return redirect()->route('home')->with('status', 'Success!');
+
+        return redirect()->route('home')
+        
         /*return response()->json([
             "message" => "record created"
         ], 201);
         */
     }
     
-
-
     /**
      * Display the specified resource.
      *
@@ -131,6 +110,5 @@ class UserContr extends Controller
         if(empty($user)){
             return view('home');
         }
-        return $user;
     }
 }

@@ -17,15 +17,16 @@
     <title>A-Riendo - Login</title>
 </head>
 
+<x-navbar login=true></x-navbar>
 <body id="login">
-    <div class="d-flex align-items-center pt-5 ml-5 mb-4">
+    <!--<div class="d-flex align-items-center pt-5 ml-5 mb-4">
         <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="" width="100px" />
         <div class="title">
             <h1>Compra lo que necesites,</h1>
             <h1>arriéndalo todo</h1>
         </div>
-    </div>
-    <div class="flex-column col-10">
+    </div>-->
+    <div class="flex-column">
         <div class="d-flex justify-content-center">
             <svg id="Capa_1" data-name="Capa 1" width="90px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90">
                 <title>circles</title>
@@ -41,7 +42,7 @@
                     <div class="d-flex justify-content-center mt-1 mb-2">
                         <h5>Login</h5>
                     </div>
-                    <form action="/pepe" method="get">
+                    <form action="{{ action('UserContr@getUserByEmail')}}" method="get">
                         <div class="form-group d-flex flex-column">
                             <input type="email" class="form-input mt-2 mb-4" id="email"
                                 aria-describedby="emailHelp" placeholder="Correo electrónico">

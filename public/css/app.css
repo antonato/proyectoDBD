@@ -146,6 +146,7 @@ background-image: url("/assets/img/fondoGrande.png");
 background-size: cover;
 }
 
+
 .loginback{
 background-color: #095D6A !important;
 border-radius: 30px 30px 30px 30px !important;
@@ -206,3 +207,50 @@ margin-left: 20px;
 font-weight: 300;
 font-family: "Nunito Sans", sans-serif;
 }
+
+/*--------------------------------------------------------------
+# Registro
+--------------------------------------------------------------*/
+#register{
+  background-image: url("/assets/img/fondoGrande.png");
+  background-size: cover;
+}
+
+.register-title {
+  font-size: 60px;
+  color:#00879c;
+}
+
+.register-m-b-md {
+    margin-bottom: 30px;
+}
+.register-full-height {
+    height: 100vh;
+}
+
+.register-form-group {
+  background:floralwhite;
+  padding: 40px, 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius:10px;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+
+
+

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Arriendo en Construcción</title>
+        <title>A-Riendo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -73,9 +73,6 @@
             <div class="flex-center flex-column position-ref full-height">
                 <div class="title m-b-md">
                     Arriendo en Construcción
-                </div>
-                <div class="links">
-                    <a href="https://youtu.be/bZpJTQITN8k?t=4">Por favor clickeame uwu</a>
                 </div>
             </div>
         </div>

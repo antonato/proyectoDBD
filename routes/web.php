@@ -37,9 +37,10 @@ Route::put('/transaction/{id}', 'TransactionContr@update');
 //Rutas de User
 Route::get('/user/all', 'UserContr@index');
 Route::get('/user/{id}', 'UserContr@show');
-Route::post('/user', 'UserContr@store')->name('user.store');
+Route::post('/user', 'UserContr@store');
 Route::delete('/user/delete/{id}', 'UserContr@destroy');
 Route::put('/user/{id}', 'UserContr@update');
+Route::get('/user', 'UserContr@getUserByEmail');
 
 
 //Rutas de UserAddress
@@ -80,7 +81,6 @@ Route::get('/rol/{id}', 'RolContr@show');
 Route::post('/rol', 'RolContr@store');
 Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::put('/rol/{id}', 'RolContr@update');
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 
