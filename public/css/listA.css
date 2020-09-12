@@ -1,0 +1,53 @@
+.yellow{
+    border-radius: 30px 30px 30px 30px !important;
+    -moz-border-radius: 30px 30px 30px 30px !important;
+    -webkit-border-radius: 30px 30px 30px 30px !important;
+    border: 2px solid#FBBC58 !important;
+}
+
+.title-category{
+    font-weight: bolder;
+    color: #074650;
+}
+
+.ind-category{
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#group-category div:hover{
+    width: 101%;
+    height: 100%;
+    background-color: #FBBC58 !important;
+}
+
+.ind-category h5{
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 100 !important;
+    color: #074650 !important;
+    margin-bottom: 0;
+}
+
+h6{
+    color: #074650 !important;
+    margin-bottom: 0 !important;
+}
+
+.announcement .price{
+    color: #F57B51 !important;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#filter h5{
+    color: #074650 !important;
+    margin-bottom: 0 !important;
+}
+
+
+#filter select{
+    border-radius: 10px 10px 10px 10px !important;
+    -moz-border-radius: 10px 10px 10px 10px !important;
+    -webkit-border-radius: 10px 10px 10px 10px !important;
+    border: 1px solid !important;
+}

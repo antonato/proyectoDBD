@@ -42,7 +42,7 @@
                         </div>
     
                         <div class="col-6">
-                            <img class="w-100" src="{{$data[0]->ImageFormat}}" alt="Imagen grande del anuncio">
+                            <img class="w-100" src="{{$data[0]->ImageFormat}}" alt="Imagen pequeña del anuncio">
                             <div id="comments" class="order-0 w-100 orange mt-2 p-0">
                                 <div class="d-flex align-items-center">
                                     <strong><p class="ml-3 mt-2">Comentarios</p></strong>
