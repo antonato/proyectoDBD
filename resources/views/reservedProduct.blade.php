@@ -14,19 +14,12 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>A-Riendo - Login</title>
+
 </head>
 
 <x-navbar login=true></x-navbar>
-<body id="login">
-    <!--<div class="d-flex align-items-center pt-5 ml-5 mb-4">
-        <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="" width="100px" />
-        <div class="title">
-            <h1>Compra lo que necesites,</h1>
-            <h1>arriéndalo todo</h1>
-        </div>
-    </div>-->
-    <div class="flex-column">
+<body id="reservedProduct">
+     <div class="flex-column">
         <div class="d-flex justify-content-center">
             <svg id="Capa_1" data-name="Capa 1" width="90px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90">
                 <title>circles</title>
@@ -35,35 +28,26 @@
                 <circle cx="124" cy="48" r="13" fill="#fbbc58" />
             </svg>
         </div>
-        
-        <div class="d-flex justify-content-center">
-            <div class="card loginback" style="width: 14rem;">
+
+
+    <div class="d-flex justify-content-center">
+            <div class="card loginback" style="width: 30rem;">
                 <div class="card-body">
                     <div class="d-flex justify-content-center mt-1 mb-2">
-                        <h5>Login</h5>
+                        <h5>¡Tu producto ha sido reservado!</h5>
                     </div>
                     <form action="{{ action('UserContr@getUserByEmail')}}" method="get">
-                        <div class="form-group d-flex flex-column">
-                            <input type="email" class="form-input mt-2 mb-4" id="email"
-                                aria-describedby="emailHelp" placeholder="Correo electrónico">
-                            <input type="password" class="form-input" id="password" aria-describedby="emailHelp"
-                                placeholder="Contraseña">
-
-                            <small id="emailHelp" class="form-text text-muted">
-                                <a href="{{  route('auth.register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>
-                            </small>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar">
-                        </div>
+                       <a href="home" class="d-flex justify-content-center">
+                            <input type="button" class="btn btn-info btn-md" value="Seguir buscando" action="home">
+                       <a>
                     </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -73,6 +57,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
-</body>
 
-</html>
+</body>
+    
+
+
+
+</htm>

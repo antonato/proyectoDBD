@@ -9,6 +9,6 @@
     <ul class="navbar-nav ml-auto" >
         <a href="https://youtu.be/bZpJTQITN8k?t=4">
             <img src="{{ asset('assets\img\oscar.png') }}" alt="una oveja fachera" width="75px" />
-        <a>
+        </a>
     </ul>
 </div>

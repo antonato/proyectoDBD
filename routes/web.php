@@ -97,4 +97,9 @@ Route::get('publicación', function(){
     return view('announcement');
 })->name('announcement');
 
+Route::get('producto reservado', function(){
+    return view('reservedProduct');
+})->name('reservedProduct');
+
+
 Auth::routes();

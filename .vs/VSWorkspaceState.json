@@ -4,12 +4,11 @@
     "\\app",
     "\\app\\Http",
     "\\app\\Http\\Controllers",
-    "\\app\\Http\\Requests",
+    "\\app\\View\\Components",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\layouts",
-    "\\routes"
+    "\\resources\\views\\auth"
   ],
-  "SelectedNode": "\\app\\Http\\Requests\\EditarUsuarioRequest.php",
+  "SelectedNode": "\\resources\\views\\announcement.blade.php",
   "PreviewInSolutionExplorer": false
 }
