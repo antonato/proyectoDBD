@@ -13,8 +13,20 @@ class AnnouncementContr extends Controller
      */
     public function index()
     {
-        $announcement = \App\Announcement::all();
-        return response()->json($announcement);
+        $announcement = \App\Announcement::orderBy('id', 'DESC')->paginate(3);
+        return view('listAnnouncement', compact('announcement'));
+    }
+
+    /**
+     * Retorna la región de un id de un anuncio.
+     *
+     * @param  int  $id
+     * @return String
+     */
+     public static function region($id)
+    {
+        $address = \App\Announcement::find($id)->announcementAddress;
+        return $address->region;
     }
 
     /**
@@ -113,4 +125,6 @@ class AnnouncementContr extends Controller
         $announcement->delete();
         return "announcement deleted";
     }
+
+    
 }
