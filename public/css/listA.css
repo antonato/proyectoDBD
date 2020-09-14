@@ -9,12 +9,12 @@
     font-weight: bolder;
     color: #074650;
 }
-
+ 
 .ind-category{
     padding: 10px;
     margin-top: 5px;
 }
-
+ 
 #group-category div:hover{
     width: 101%;
     height: 100%;
