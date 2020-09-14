@@ -41,7 +41,7 @@
                 <div class="register-form-group">
                     <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" required>
                     <div class="invalid-feedback">
-                        Utiliza un nombre de usuario de 6 a 8 caracteres
+                        Utiliza un nombre de usuario de 6 a 30 caracteres
                     </div>
                 </div>
                 <br>
@@ -67,7 +67,7 @@
                 <br>
                 <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" required>
                 <div class="invalid-feedback">
-                    Utiliza una contraseña de 6 a 15 digitos
+                    Utiliza una contraseña de 6 a 15 caracteres
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">

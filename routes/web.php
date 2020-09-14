@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('listAnnouncement');
+    return view('welcome');
 });
 
 
@@ -82,9 +82,14 @@ Route::post('/rol', 'RolContr@store');
 Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::put('/rol/{id}', 'RolContr@update');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('home', function(){
+        return view('home');
+})->name('home');
 //Rutas de vistas
+
 Route::get('registro', function(){
       return view('auth/register');
 })->name('auth.register');

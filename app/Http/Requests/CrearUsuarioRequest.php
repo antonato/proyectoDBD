@@ -25,10 +25,10 @@ class CrearUsuarioRequest extends FormRequest
     {
         return [
             //Usuario
-            'userName' => 'required|string|max:8|unique:users',
-            'name' => 'required|string|max:30',
-            'surname' => 'required|string|max:20',
-            'password' => 'required|string|max:15',
+            'userName' => 'required|string|alpha_num|max:30|min:6|unique:users',
+            'name' => 'required|string|alpha|max:30',
+            'surname' => 'required|string|alpha|max:20',
+            'password' => 'required|string|min:6|max:15|',
             'email' => 'required|email|string|max:30|unique:users',
 
         ];

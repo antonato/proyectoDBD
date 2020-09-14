@@ -41,7 +41,7 @@ class UserContr extends Controller
         $user->password = $request->password;
         $user->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('status', 'Success!');
         
         /*return response()->json([
             "message" => "record created"
