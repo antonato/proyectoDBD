@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="{{ asset('assets\img\logoA-Riendo.png') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,7 +14,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/listA.css')}}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link
@@ -23,6 +25,8 @@
 
 
 </head>
+
+
 <body>
     <div id="navbar" class="navbar d-flex w-100 navbar-expand-md" alt="barra superior">
         <a href="/" alt="volver a página principal">

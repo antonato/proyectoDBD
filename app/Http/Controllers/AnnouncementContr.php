@@ -13,9 +13,20 @@ class AnnouncementContr extends Controller
      */
     public function index()
     {
-        $announcement = \App\Announcement::orderBy('PublishedTime', 'DESC')->where('Disponibility', True)->paginate(4);
-        return view('listAnnouncement', compact('announcement'));
+        $announcement =  new \App\Announcement();
+
+        if(request()->has('OrderBy')){
+            $announcement = $announcement->orderBy(request('OrderBy'), 'ASC')->where('Disponibility', True);
+        }
+
+        $announcement = $announcement->paginate(3)->appends([
+            'OrderBy' => request('OrderBy'),
+        ]);
+        
+        return view('home', compact('announcement'));
     }
+
+   
 
     /**
      * Display a listing of the resource.
@@ -24,8 +35,14 @@ class AnnouncementContr extends Controller
      */
      public function category($category)
     {
-        $announcement = \App\Announcement::where('Category', $category)->paginate(4);
-        return view('listAnnouncement', compact('announcement'));
+        $announcement = new \App\Announcement;
+        if(request()->has('OrderBy')){
+            $announcement = $announcement->orderBy(request('OrderBy'), 'ASC')->where('Disponibility', True);
+        }
+        $announcement = $announcement -> where('Category', $category)->where('Disponibility', True)->paginate(3)->appends([
+            'OrderBy' => request('OrderBy'),
+        ]);
+        return view('home', compact('announcement'));
     }
 
     /**

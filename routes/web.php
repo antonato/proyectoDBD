@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-
 //Rutas de Permisos
 Route::get('/permissions/all', 'PermissionsContr@index');
 Route::get('/permissions/{id}', 'PermissionsContr@show');
@@ -60,12 +55,10 @@ Route::put('/productComment/{id}', 'ProductCommentContr@update');
 
 
 //Rutas de Announcement
-Route::get('/announcement/all/', 'AnnouncementContr@index')->name('home');;
-Route::get('/announcement/all/{category}', 'AnnouncementContr@category');
+Route::get('/home/{category}', 'AnnouncementContr@category');
 Route::get('/announcement/{id}', 'AnnouncementContr@show');
 Route::post('/announcement', 'AnnouncementContr@store');
 Route::delete('/announcement/delete/{id}', 'AnnouncementContr@destroy');
-// Route::put('/announcement/{id}', 'AnnouncementContr@update');
 Route::put('/announcement/reserve/{id}', 'AnnouncementContr@disponibility')->name('reserva');
 
 
@@ -89,9 +82,7 @@ Route::get('/home{id}', 'HomeController@show');
 
 
 //Rutas de vistas
-Route::get('home', function(){
-    return view('home');
-})->name('home');
+Route::get('/home','AnnouncementContr@index')->name('home');
 
 Route::get('registro', function(){
     return view('auth/register');

@@ -48,7 +48,10 @@ class UserContr extends Controller
         $file->move('images', $nombre);
         $user->save();
 
-        return view('home')->with('status', 'Success!')->with('user', $user->userName);
+        $announcement =  new \App\Announcement();
+        $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
+
+        return view('home', compact('announcement'))->with('status', 'Success!')->with('user', $user->userName);
     }
     
     /**
