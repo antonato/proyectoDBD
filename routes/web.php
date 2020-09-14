@@ -82,16 +82,17 @@ Route::post('/rol', 'RolContr@store');
 Route::delete('/rol/delete/{id}', 'RolContr@destroy');
 Route::put('/rol/{id}', 'RolContr@update');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+// Rutas de Home
+Route::get('/home{id}', 'HomeController@show');
 
 
-Route::get('home', function(){
-        return view('home');
-})->name('home');
 //Rutas de vistas
+Route::get('home', function(){
+    return view('home');
+})->name('home');
 
 Route::get('registro', function(){
-      return view('auth/register');
+    return view('auth/register');
 })->name('auth.register');
 
 Route::get('ingresar', function(){

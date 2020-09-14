@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags -->
@@ -39,22 +39,22 @@
         <div class="d-flex justify-content-center">
             <div class="card loginback" style="width: 14rem;">
                 <div class="card-body">
-                    <div class="d-flex justify-content-center mt-1 mb-2">
+                    <div class="d-flex justify-content-center mt-1 mb-2" alt="Login">
                         <h5>Login</h5>
                     </div>
                     <form action="{{ action('UserContr@getUserByEmail')}}" method="get">
                         <div class="form-group d-flex flex-column">
                             <input type="email" class="form-input mt-2 mb-4" id="email"
-                                aria-describedby="emailHelp" placeholder="Correo electrónico">
+                                aria-describedby="emailHelp" placeholder="Correo electrónico" alt="Sección correo electróncio">
                             <input type="password" class="form-input" id="password" aria-describedby="emailHelp"
-                                placeholder="Contraseña">
+                                placeholder="Contraseña" alt="Sección contraseña">
 
                             <small id="emailHelp" class="form-text text-muted">
                                 <a href="{{  route('auth.register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>
                             </small>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar">
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar" alt="Botón entrar">
                         </div>
                     </div>
                     </form>

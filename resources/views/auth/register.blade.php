@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     
 <head>
     <!-- Required meta tags -->
@@ -34,12 +34,12 @@
             <center>
             <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="logotipo de página" width="150px"/><br>
             </center>
-            <div class="register-title register-m-b-md ">
+            <div class="register-title register-m-b-md " alt="Únete a nosotros">
                 ¡Únete a nosotros!
             </div>
             <form id="validationForm" action="{{ action('UserContr@store')}}" method="post" class="needs-validation" novalidate>
                 <div class="register-form-group">
-                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" required>
+                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" alt="Sección Nombre de usuario" required>
                     <div class="invalid-feedback">
                         Utiliza un nombre de usuario de 6 a 30 caracteres
                     </div>
@@ -47,31 +47,31 @@
                 <br>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" alt="Sección Nombre personal" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                     <div class="col">
-                        <input type="text" name ="surname" class="form-control" id="surname" placeholder="Apellido" required>
+                        <input type="text" name ="surname" class="form-control" id="surname" placeholder="Apellido" alt="Sección Apellido personal" required>
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
                     </div>
                 </div>
                 <br>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Correo electrónico" alt="Sección Correo electrónico" required>
                 <div class="invalid-feedback">
                     Dirección de correo inválida
                 </div>
                 <br>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" required>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Contraseña" alt="Sección Contraseña" required>
                 <div class="invalid-feedback">
                     Utiliza una contraseña de 6 a 15 caracteres
                 </div>
                 <br>
                 <div class="d-flex justify-content-center">
-                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Registrarse">
+                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Registrarse" alt="Sección Registrarse">
                 </div>
               </form>
         </div>

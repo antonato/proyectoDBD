@@ -58,7 +58,10 @@ class UserContr extends Controller
     public function show($id)
     {
         $user = \App\User::find($id);
-        return response()->json($user);
+        $username = $user->username;
+        //return response()->json($user);
+
+        return view('home', ['data' => array($username)]);
     }
 
     /**
@@ -106,7 +109,7 @@ class UserContr extends Controller
         $password = $request->input('password');
         $condition = ['email' => $email, 'password'=> $password];
         $user =  \App\User::where($condition)->first();
-
+        
         if(empty($user)){
             return view('home');
         }
