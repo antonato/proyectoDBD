@@ -101,7 +101,7 @@
                             @endforeach
                         </div>
                     </div>
-                    {{$announcement->links()}}
+                    {{$announcement ?? ''->links()}}
                 </div>
 
             </div>
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    {{-- {!! $announcement->render() !!} --}}
+    {{-- {!! $announcement ?? ''->render() !!} --}}
 
 </html>
 

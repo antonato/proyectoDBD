@@ -33,12 +33,19 @@ class UserContr extends Controller
     
     public function store(CrearUsuarioRequest $request)
     {
+        
         $user = new \App\User();
         $user->userName = $request->userName;
         $user->name = $request->name;
         $user->surname = $request->surname;
         $user->email = $request->email;
         $user->password = $request->password;
+        
+        $file = $request->file('userImage');
+        $nombre = $file->getClientOriginalName();
+        echo $user->userImage;
+        $user->userImage = $nombre;
+        $file->move('images', $nombre);
         $user->save();
 
         return redirect()->route('home')->with('status', 'Success!');

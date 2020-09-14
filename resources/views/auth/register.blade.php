@@ -15,7 +15,8 @@
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <!-- plugin bs custom -->
+    
 </head>
 
 <x-navbar login=true></x-navbar>
@@ -37,7 +38,7 @@
             <div class="register-title register-m-b-md " alt="Únete a nosotros">
                 ¡Únete a nosotros!
             </div>
-            <form id="validationForm" action="{{ action('UserContr@store')}}" method="post" class="needs-validation" novalidate>
+            <form id="validationForm" action="{{ action('UserContr@store')}}" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
                 <div class="register-form-group">
                     <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" alt="Sección Nombre de usuario" required>
                     <div class="invalid-feedback">
@@ -70,15 +71,31 @@
                     Utiliza una contraseña de 6 a 15 caracteres
                 </div>
                 <br>
+                <div class="custom-file">
+
+                    <input type="file" accept='image/*' class="custom-file-input" id="customFileLang" lang="es" name="userImage" >
+                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                </div>
                 <div class="d-flex justify-content-center">
                     <input type="submit" name="submit" class="btn btn-info btn-md" value="Registrarse" alt="Sección Registrarse">
                 </div>
+                
               </form>
         </div>
     </div>
     
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script>
+      bsCustomFileInput.init()
+
+      var btn = document.getElementById('btnResetForm')
+      var form = document.querySelector('form')
+      btn.addEventListener('click', function () {
+        form.reset()
+      })
+    </script>
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {

@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 0px solid #000000 !important;
 }
 
-.button button{
+.button input{
   color: #ffffff;
   background-color: #F57B51;
   border-radius: 30px 30px 30px 30px !important;
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.button button:hover{
+.button input:hover{
   background-color: #095D6A !important;
   color: #FDF6F0 !important;
   border: 3px solid #095D6A !important;
