@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Providers\RouteServiceProvider;
 use App\Http\Requests\CrearUsuarioRequest;
 use App\Http\Requests\EditarUsuarioRequest;
 
@@ -47,12 +48,7 @@ class UserContr extends Controller
         $file->move('images', $nombre);
         $user->save();
 
-        return redirect()->route('home')->with('status', 'Success!');
-        
-        /*return response()->json([
-            "message" => "record created"
-        ], 201);
-        */
+        return view('home')->with('status', 'Success!')->with('user', $user->userName);
     }
     
     /**
@@ -67,7 +63,6 @@ class UserContr extends Controller
         $username = $user->username;
         //return response()->json($user);
 
-        return view('home', ['data' => array($username)]);
     }
 
     /**
@@ -116,8 +111,5 @@ class UserContr extends Controller
         $condition = ['email' => $email, 'password'=> $password];
         $user =  \App\User::where($condition)->first();
         
-        if(empty($user)){
-            return view('home');
-        }
     }
 }

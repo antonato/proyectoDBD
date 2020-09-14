@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('components.navbar')
 
 @section('content')
 
-@if(session('status'))
+@if($status ?? '' == 'Success!')
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Excelente!</strong> Completaste el registro exitosamente!!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -10,6 +10,7 @@
         </button>
     </div>
 @endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -25,6 +26,8 @@
 
                     Sección en construcción :(
                 </div>
+
+
             </div>
         </div>
     </div>

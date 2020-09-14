@@ -2,6 +2,11 @@
 <html lang="es">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,13 +24,6 @@
 
 <x-navbar login=true></x-navbar>
 <body id="login">
-    <!--<div class="d-flex align-items-center pt-5 ml-5 mb-4">
-        <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="" width="100px" />
-        <div class="title">
-            <h1>Compra lo que necesites,</h1>
-            <h1>arriéndalo todo</h1>
-        </div>
-    </div>-->
     <div class="flex-column">
         <div class="d-flex justify-content-center">
             <svg id="Capa_1" data-name="Capa 1" width="90px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90">
@@ -44,10 +42,9 @@
                     </div>
                     <form action="{{ action('UserContr@getUserByEmail')}}" method="get">
                         <div class="form-group d-flex flex-column">
-                            <input type="email" class="form-input mt-2 mb-4" id="email"
-                                aria-describedby="emailHelp" placeholder="Correo electrónico" alt="Sección correo electróncio">
-                            <input type="password" class="form-input" id="password" aria-describedby="emailHelp"
-                                placeholder="Contraseña" alt="Sección contraseña">
+                            <input type="email" class="form-input mt-2 mb-4" id="email" aria-describedby="emailHelp" placeholder="Correo electrónico" alt="Correo electróncio">
+
+                            <input type="password" class="form-input" id="password" aria-describedby="emailHelp" placeholder="Contraseña" alt="Contraseña">
 
                             <small id="emailHelp" class="form-text text-muted">
                                 <a href="{{  route('auth.register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>

@@ -71,7 +71,7 @@
                     Utiliza una contraseña de 6 a 15 caracteres
                 </div>
                 <br>
-                <div class="custom-file">
+                <div class="custom-file mb-3">
 
                     <input type="file" accept='image/*' class="custom-file-input" id="customFileLang" lang="es" name="userImage" >
                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
