@@ -60,11 +60,13 @@ Route::put('/productComment/{id}', 'ProductCommentContr@update');
 
 
 //Rutas de Announcement
-Route::get('/announcement/all', 'AnnouncementContr@index');
+Route::get('/announcement/all/', 'AnnouncementContr@index')->name('home');;
+Route::get('/announcement/all/{category}', 'AnnouncementContr@category');
 Route::get('/announcement/{id}', 'AnnouncementContr@show');
 Route::post('/announcement', 'AnnouncementContr@store');
 Route::delete('/announcement/delete/{id}', 'AnnouncementContr@destroy');
-Route::put('/announcement/{id}', 'AnnouncementContr@update');
+// Route::put('/announcement/{id}', 'AnnouncementContr@update');
+Route::put('/announcement/reserve/{id}', 'AnnouncementContr@disponibility')->name('reserva');
 
 
 //Rutas de PaymentMethod
@@ -107,17 +109,5 @@ Route::get('producto reservado', function(){
     return view('reservedProduct');
 })->name('reservedProduct');
 
-Route::get('images/{archivo}', function ($archivo) {
-    $public_path = public_path();
-    $url = $public_path.'/images/'.$archivo;
-    //verificamos si el archivo existe y lo retornamos
-    if (Storage::exists($archivo))
-    {
-      return response()->download($url);
-    }
-    //si no se encuentra lanzamos un error 404.
-    abort(404);
-
-});
 
 Auth::routes();

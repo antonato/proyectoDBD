@@ -13,7 +13,18 @@ class AnnouncementContr extends Controller
      */
     public function index()
     {
-        $announcement = \App\Announcement::orderBy('id', 'DESC')->paginate(3);
+        $announcement = \App\Announcement::orderBy('PublishedTime', 'DESC')->where('Disponibility', True)->paginate(4);
+        return view('listAnnouncement', compact('announcement'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+     public function category($category)
+    {
+        $announcement = \App\Announcement::where('Category', $category)->paginate(4);
         return view('listAnnouncement', compact('announcement'));
     }
 
@@ -59,9 +70,7 @@ class AnnouncementContr extends Controller
         $announcement->PublishedTime = $request->PublishedTime;
         $announcement->Category = $request->Category;
         $announcement->save();
-        return response()->json([
-            "message" => "record created"
-        ], 201);
+
     }
 
     /**
@@ -110,7 +119,23 @@ class AnnouncementContr extends Controller
         $announcement->update($request->all());
         $announcement->save();
 
-        return response()->json($announcement);
+        return view('reservedProduct');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+     public function disponibility($id)
+    {
+        $announcement = \App\Announcement::findOrFail($id);
+        $announcement->Disponibility = False;
+        $announcement->save();
+
+        return view('reservedProduct');
     }
 
     /**

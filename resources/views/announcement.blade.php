@@ -24,9 +24,9 @@
 
             <div id="navigation" class="mt-2 mb-2" alt="Barra de Navegación">
                 <h5 alt="Barra de Navegación" id="text" class="ml-4 pt-2 pb-2">
-                    <a href="">Inicio</a>
+                    <a href="{{ action('AnnouncementContr@index')}}">Inicio</a>
                     >
-                    <a href="">{{$data[0]->Category}}</a> 
+                    <a href="{{ action('AnnouncementContr@category', [$data[0]->Category]) }}">{{$data[0]->Category}}</a> 
                     > 
                     <a href="">{{$data[0]->NameProduct}}</a>
                 </h5>
@@ -56,7 +56,10 @@
                                     
                                     <div class="d-flex ml-3 mt-2 mb-2 align-content-center">
                                         <div class="d-flex align-items-center">
-                                            <img class="w=100" src="{{asset($data[1]->userImage)}}" alt="Imagen pequeña del anuncio">
+                                            @php
+                                                $userComment = \App\Http\Controllers\UserContr::findbyname($comment->user_id);
+                                            @endphp
+                                            <img class="icon" src="{{asset($userComment->userImage)}}" alt="Imagen Icon Usuario">
                                         </div>
                                         <div class="ml-1 w-75">
                                             <strong><p class="mb-0" style="font-size:10px">{{$comment->user_id}}</p></strong>
@@ -89,7 +92,7 @@
                                 <h1 id="price" class="mt-0 mb-0">${{$data[0]->Price}}</h1>
                                 <div class="d-flex flex-wrap mt-2">
                                     <div alt="Icono Arrendador" class="mb-2 mr-1">
-                                        <img class="w=100" src="{{asset($data[1]->userImage)}}" alt="Imagen pequeña del anuncio">
+                                        <img class="icon" src="{{asset($data[1]->userImage)}}" alt="Imagen Icon Usuario">
                                     </div>                            
                                     <div>
                                         <div class="d-flex">
@@ -113,8 +116,12 @@
                             </div>
                             <div class="d-flex w-100 justify-content-center">
                                 <div class="button mt-2 justify-content-center w-100">
-                                    <input type="submit" name="submit" value="Arriendo">
-                                </div> 
+                                    <form method="POST" action='{{route("reserva", $data[0]->id)}}'>
+                                        @method('PUT')
+                                        @csrf  
+                                        <input type="submit">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -139,46 +146,8 @@
                 });
               </script>
             <script src="{{ asset('js/app.js') }}"></script>
-            <script>
-                // Example starter JavaScript for disabling form submissions if there are invalid fields
-                (function() {
-                    'use strict';
-                    window.addEventListener('load', function() {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                    });
-                }, false);
-                })();
-            </script>
+            
             @endsection
     </body>
 </html>
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-</script>
+
