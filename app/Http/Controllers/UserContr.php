@@ -43,7 +43,6 @@ class UserContr extends Controller
         
         $file = $request->file('userImage');
         $nombre = $file->getClientOriginalName();
-        echo $user->userImage;
         $user->userImage = $nombre;
         $file->move('images', $nombre);
         $user->save();

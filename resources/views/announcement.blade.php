@@ -56,9 +56,7 @@
                                     
                                     <div class="d-flex ml-3 mt-2 mb-2 align-content-center">
                                         <div class="d-flex align-items-center">
-                                            <svg height="40" width="40">
-                                                <circle cx="20" cy="20" r="20" stroke-width="3" fill="red" />
-                                            </svg> 
+                                            <img class="w=100" src="{{asset($data[1]->userImage)}}" alt="Imagen pequeña del anuncio">
                                         </div>
                                         <div class="ml-1 w-75">
                                             <strong><p class="mb-0" style="font-size:10px">{{$comment->user_id}}</p></strong>
@@ -91,9 +89,7 @@
                                 <h1 id="price" class="mt-0 mb-0">${{$data[0]->Price}}</h1>
                                 <div class="d-flex flex-wrap mt-2">
                                     <div alt="Icono Arrendador" class="mb-2 mr-1">
-                                        <svg height="40" width="40">
-                                            <circle cx="20" cy="20" r="20" stroke-width="3" fill="red" />
-                                        </svg> 
+                                        <img class="w=100" src="{{asset($data[1]->userImage)}}" alt="Imagen pequeña del anuncio">
                                     </div>                            
                                     <div>
                                         <div class="d-flex">
