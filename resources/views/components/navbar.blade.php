@@ -80,7 +80,7 @@
             </a>
         </ul>
     </div>
-    <main class="py-4">
+    <main class="pb-1">
         @yield('content')
     </main>
 </body>

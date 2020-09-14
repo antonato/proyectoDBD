@@ -22,7 +22,7 @@
 
         <div class="flex-column w-75">
 
-            <div id="navigation" class="mt-2 mb-2" alt="Barra de Navegación">
+            <div id="navigation" class="mt-1 mb-2" alt="Barra de Navegación">
                 <h5 alt="Barra de Navegación" id="text" class="ml-4 pt-2 pb-2">
                     <a href="{{ action('AnnouncementContr@index')}}">Inicio</a>
                     >
@@ -119,7 +119,7 @@
                                     <form method="POST" action='{{route("reserva", $data[0]->id)}}'>
                                         @method('PUT')
                                         @csrf  
-                                        <input type="submit">
+                                        <input type="submit" value="Arrendar">
                                     </form>
                                 </div>
                             </div>

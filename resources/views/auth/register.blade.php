@@ -1,51 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
     
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Registro</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- plugin bs custom -->
-    
-</head>
-
-<x-navbar login=true></x-navbar>
 <body id="register">
+    <x-navbar login=true></x-navbar>
 
     @if(count($errors)>0)
         @foreach($errors->all() as $error)
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger pt-2" role="alert">
                 {{ $error }}
             </div>
         @endforeach
     @endif
 
-    <div class="container flex-center position-ref register-full-height">
-        <div class="content">
-            <center>
-            <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="logotipo de página" width="150px"/><br>
-            </center>
-            <div class="register-title register-m-b-md " alt="Únete a nosotros">
-                ¡Únete a nosotros!
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="content d-flex p-5">
+            <div class="p-3 mr-3">
+                <center>
+                <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="logotipo de página" width="150px"/><br>
+                <div class="register-title register-m-b-md" alt="Únete a nosotros">
+                    <h1 class="title mt-3">¡Únete a nosotros!
+                    </h1>
+                </div>
+                </center>
             </div>
             <form id="validationForm" action="{{ action('UserContr@store')}}" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
-                <div class="register-form-group">
-                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" alt="Sección Nombre de usuario" required>
-                    <div class="invalid-feedback">
-                        Utiliza un nombre de usuario de 6 a 30 caracteres
-                    </div>
-                </div>
-                <br>
+                <h3 class="mb-4">Registra tus datos</h3>
                 <div class="row">
                     <div class="col">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" alt="Sección Nombre personal" required>
@@ -58,6 +37,13 @@
                         <div class="invalid-feedback">
                             Panel vacío
                         </div>
+                    </div>
+                </div>
+                <br>
+                <div class="register-form-group">
+                    <input type="text" name = "userName" class="form-control" id="username" placeholder="Nombre de usuario" alt="Sección Nombre de usuario" required>
+                    <div class="invalid-feedback">
+                        Utiliza un nombre de usuario de 6 a 30 caracteres
                     </div>
                 </div>
                 <br>
@@ -74,7 +60,7 @@
                 <div class="custom-file mb-3">
 
                     <input type="file" accept='image/*' class="custom-file-input" id="customFileLang" lang="es" name="userImage" >
-                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                    <label style="border-radius: 30px 10px 10px 30px;" class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                 </div>
                 <div class="d-flex justify-content-center">
                     <input type="submit" name="submit" class="btn btn-info btn-md" value="Registrarse" alt="Sección Registrarse">
