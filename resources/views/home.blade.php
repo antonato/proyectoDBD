@@ -122,8 +122,9 @@ elseif (Request::is('home/Espacios')) {
                                                     @php
                                                         echo \App\Http\Controllers\AnnouncementContr::region($item->id);
                                                     @endphp
-                                                </p>
+                                                </p>             
                                             </div>
+                                            <p class="mt-0 mb-0 ml-1" style="color: #095D6A; font-size: 10px; font-weight: 600;">Publicado: {{ $item->PublishedTime }}</p>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center mr-3 col-2">

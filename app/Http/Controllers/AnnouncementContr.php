@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use \Illuminate\Support\Str;
 class AnnouncementContr extends Controller
 {
     /**
@@ -14,15 +14,15 @@ class AnnouncementContr extends Controller
     public function index()
     {
         $announcement =  new \App\Announcement();
-
+        $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
+        
         if(request()->has('OrderBy')){
             $announcement = $announcement->orderBy(request('OrderBy'), 'ASC')->where('Disponibility', True);
         }
-
+        
         $announcement = $announcement->paginate(3)->appends([
             'OrderBy' => request('OrderBy'),
         ]);
-        
         return view('home', compact('announcement'));
     }
 
