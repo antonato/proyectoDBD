@@ -25,6 +25,12 @@
 <x-navbar login=true></x-navbar>
 <body id="login">
     <div class="flex-column">
+        @if($notLogged ?? '' != NULL)
+            <div class="alert alert-danger pt-2" role="alert">
+                   El usuario o la contraseña son incorrectos
+            </div>
+        @endif
+
         <div class="d-flex justify-content-center">
             <svg id="Capa_1" data-name="Capa 1" width="90px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90">
                 <title>circles</title>

@@ -18,7 +18,7 @@ $nav_in = '';
 $nav_ve = '';
 $nav_ar = '';
 $nav_es = '';
-if (Request::is('home'))
+if (Request::is('/'))
 {
     $nav_last = 'active';
 }

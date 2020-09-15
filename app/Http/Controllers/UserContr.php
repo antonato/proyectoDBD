@@ -62,7 +62,9 @@ class UserContr extends Controller
         }
         $announcement =  new \App\Announcement();
         $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
-
+        $announcement = $announcement->paginate(3)->appends([
+            'OrderBy' => request('OrderBy'),
+        ]);
         return view('home', compact('announcement'))->with('status', 'Success!')->with('user', $user->userName);
     }
     
@@ -87,23 +89,10 @@ class UserContr extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public static function findbyname(Request $request)
-    {
-        //$userName = $request->userName;
-        //$userName = \App\User::userName->get();
-        $password = $request->password;
-        $user = \App\User::where('userName', $userName)->first();
-        $password = \App\User::where('password', $password)->first();
-
-        $userNameIn =$request->input('userName');
-        $passwordIn = $request->input('password');
-
-        $condition = [$userName,$userNameIn];
-
-        if ($userName == $userNameIn && $password == $passwordIn){
-            return $condition;
-        }
-        return view('auth.register');
+     public static function findbyname($name)
+     {
+        $user = \App\User::where('userName', $name)->first();
+        return $user;
     }
     
 
@@ -112,10 +101,16 @@ class UserContr extends Controller
         $password = $request->input('password');
         $condition = ['userName' => $userName, 'password'=> $password];
         $user = User::where($condition)->first();
+        $announcement =  new \App\Announcement();
+        $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
+        $announcement = $announcement->paginate(3)->appends([
+            'OrderBy' => request('OrderBy'),
+        ]);
+        
         if(empty($user)){
-            return 'no logeado';
+            return view('auth.login')->with('notLogged', 'error');
             }
-        return 'logeado';
+        return view('home', compact('announcement'))->with('user', $user->userName);
     } 
 
     /**

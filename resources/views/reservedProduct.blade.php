@@ -36,7 +36,7 @@
                     <div class="d-flex justify-content-center mt-1 mb-2">
                         <h5>¡Tu producto ha sido reservado!</h5>
                     </div>
-                       <a href="home" class="d-flex justify-content-center">
+                       <a href="{{ action('AnnouncementContr@index')}}"  class="d-flex justify-content-center">
                             <input type="button" class="btn btn-info btn-md" value="Seguir buscando" action="home">
                        <a>
                     </div>
