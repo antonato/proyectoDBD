@@ -82,7 +82,7 @@ Route::get('/home{id}', 'HomeController@show');
 
 
 //Rutas de vistas
-Route::get('/home','AnnouncementContr@index')->name('home');
+Route::get('/','AnnouncementContr@index')->name('home');
 
 Route::get('registro', function(){
     return view('auth/register');

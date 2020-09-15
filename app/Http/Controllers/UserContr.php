@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use App\Http\Requests\CrearUsuarioRequest;
 use App\Http\Requests\EditarUsuarioRequest;
+use App\Http\Controllers\AnnouncementContr;
 
 class UserContr extends Controller
 {
@@ -43,11 +44,16 @@ class UserContr extends Controller
         $user->password = $request->password;
         
         $file = $request->file('userImage');
-        $nombre = $file->getClientOriginalName();
-        $user->userImage = $nombre;
-        $file->move('images', $nombre);
-        $user->save();
-
+        if(empty($file)){
+            $file = "public/images/predefined.png";
+            $user->userImage = "predefined.jpg";
+        }
+        else{
+            $nombre = $file->getClientOriginalName();
+            $user->userImage = $nombre;
+            $file->move('images', $nombre);
+            $user->save();
+        }
         $announcement =  new \App\Announcement();
         $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
 
@@ -125,7 +131,8 @@ class UserContr extends Controller
         $email =$request->input('email');
         $password = $request->input('password');
         $condition = ['email' => $email, 'password'=> $password];
-        $user =  \App\User::where($condition)->first();
+        return $email;
+        //$user =  \App\User::where($condition)->first();
         
     }
 }
