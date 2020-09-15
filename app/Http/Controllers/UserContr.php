@@ -10,8 +10,10 @@ use App\Http\Requests\EditarUsuarioRequest;
 use App\Http\Controllers\AnnouncementContr;
 
 //use Illuminate\Support\Facades\Auth;
+use App\User;
 
 use Auth;
+
 
 class UserContr extends Controller
 {
@@ -88,7 +90,7 @@ class UserContr extends Controller
      public static function findbyname(Request $request)
     {
         //$userName = $request->userName;
-        $userName = \App\User::userName->get();
+        //$userName = \App\User::userName->get();
         $password = $request->password;
         $user = \App\User::where('userName', $userName)->first();
         $password = \App\User::where('password', $password)->first();
@@ -103,6 +105,18 @@ class UserContr extends Controller
         }
         return view('auth.register');
     }
+    
+
+    public function findByUserName(Request $request){
+        $userName =$request->input('userName');
+        $password = $request->input('password');
+        $condition = ['userName' => $userName, 'password'=> $password];
+        $user = User::where($condition)->first();
+        if(empty($user)){
+            return 'no logeado';
+            }
+        return 'logeado';
+    } 
 
     /**
      * Show the form for editing the specified resource.

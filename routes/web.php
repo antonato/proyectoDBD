@@ -37,7 +37,8 @@ Route::post('/user', 'UserContr@store');
 Route::delete('/user/delete/{id}', 'UserContr@destroy');
 Route::put('/user/{id}', 'UserContr@update');
 Route::get('/user', 'UserContr@getUserByEmail');
-Route::get('/user', 'UserContr@findbyname');
+//Route::get('/user', 'UserContr@findbyname');
+Route::get('/hola', 'UserContr@findByUserName');
 
 
 //Rutas de UserAddress
