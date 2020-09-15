@@ -8,6 +8,10 @@ use App\Providers\RouteServiceProvider;
 use App\Http\Requests\CrearUsuarioRequest;
 use App\Http\Requests\EditarUsuarioRequest;
 
+//use Illuminate\Support\Facades\Auth;
+
+use Auth;
+
 class UserContr extends Controller
 {
     /**
@@ -75,10 +79,23 @@ class UserContr extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public static function findbyname($name)
+     public static function findbyname(Request $request)
     {
-        $user = \App\User::where('userName', $name)->first();
-        return $user;
+        //$userName = $request->userName;
+        $userName = \App\User::userName->get();
+        $password = $request->password;
+        $user = \App\User::where('userName', $userName)->first();
+        $password = \App\User::where('password', $password)->first();
+
+        $userNameIn =$request->input('userName');
+        $passwordIn = $request->input('password');
+
+        $condition = [$userName,$userNameIn];
+
+        if ($userName == $userNameIn && $password == $passwordIn){
+            return $condition;
+        }
+        return view('auth.register');
     }
 
     /**
@@ -126,6 +143,14 @@ class UserContr extends Controller
         $password = $request->input('password');
         $condition = ['email' => $email, 'password'=> $password];
         $user =  \App\User::where($condition)->first();
-        
+
+       if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            //return redirect()->route('announcement');
+            return 'logeado';
+       }
+       return 'error';
+       //return redirect()->route('announcement');
+        // The user is active, not suspended, and exists.
+
     }
 }

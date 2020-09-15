@@ -40,9 +40,9 @@
                     <div class="d-flex justify-content-center mt-1 mb-2" alt="Login">
                         <h5>Login</h5>
                     </div>
-                    <form action="{{ action('UserContr@getUserByEmail')}}" method="get">
+                    <form action="{{ action('UserContr@findbyname')}}" method="get">
                         <div class="form-group d-flex flex-column">
-                            <input type="email" class="form-input mt-2 mb-4" id="email" aria-describedby="emailHelp" placeholder="Correo electrónico" alt="Correo electróncio">
+                            <input type="text" class="form-input mt-2 mb-4" id="userName" placeholder="Nombre de Usuario" alt="Nombre de Usuario">
 
                             <input type="password" class="form-input" id="password" aria-describedby="emailHelp" placeholder="Contraseña" alt="Contraseña">
 

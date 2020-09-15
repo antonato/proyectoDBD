@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 //Rutas de Permisos
 Route::get('/permissions/all', 'PermissionsContr@index');
 Route::get('/permissions/{id}', 'PermissionsContr@show');
@@ -36,6 +37,7 @@ Route::post('/user', 'UserContr@store');
 Route::delete('/user/delete/{id}', 'UserContr@destroy');
 Route::put('/user/{id}', 'UserContr@update');
 Route::get('/user', 'UserContr@getUserByEmail');
+Route::get('/user', 'UserContr@findbyname');
 
 
 //Rutas de UserAddress
@@ -82,7 +84,7 @@ Route::get('/home{id}', 'HomeController@show');
 
 
 //Rutas de vistas
-Route::get('/home','AnnouncementContr@index')->name('home');
+Route::get('/','AnnouncementContr@index')->name('home');
 
 Route::get('registro', function(){
     return view('auth/register');
