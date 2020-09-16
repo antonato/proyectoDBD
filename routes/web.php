@@ -64,7 +64,7 @@ Route::get('/announcement/{id}', 'AnnouncementContr@show');
 // Route::post('/announcement', 'AnnouncementContr@store');
 // Route::delete('/announcement/delete/{id}', 'AnnouncementContr@destroy');
 Route::put('/announcement/reserve/{id}', 'AnnouncementContr@disponibility')->name('reserva');
-Route::get('/home', 'AnnouncementContr@index')->name('home');
+Route::get('/index', 'AnnouncementContr@index')->name('index');
 Route::get('/home/{category}', 'AnnouncementContr@category');
 
 
@@ -88,9 +88,11 @@ Route::get('registro', function(){
     return view('auth/register');
 })->name('auth.register');
 
-Route::get('/login', function(){
-    return view('auth/login');
-})->name('auth.login');
+//Route::get('/login', function(){
+//    return view('auth/login');
+//})->name('auth.login');
+
+Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::get('publicación', function(){
     return view('announcement');
@@ -105,4 +107,4 @@ Route::get('producto reservado', function(){
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');

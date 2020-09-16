@@ -1,5 +1,7 @@
 @extends('layouts.app')
-    
+
+@section('content')
+
 <body id="register">
 
     @if(count($errors)>0)
@@ -69,6 +71,8 @@
     </div>
     
 </body>
+
+@endsection
 
 <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
     <script>

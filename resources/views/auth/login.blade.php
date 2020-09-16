@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
 
 <body id="login">
     <div class="flex-column">
@@ -23,7 +24,7 @@
                     <div class="d-flex justify-content-center mt-1 mb-2" alt="Login">
                         <h5>Login</h5>
                     </div>
-                    <form action= "{{route('login')}}" method="get">
+                    <form action= "{{route('login')}}" method="post">
                         <div class="form-group d-flex flex-column">
                             <input name="userName" type="text" class="form-input mt-2 mb-4" id="userName" placeholder="Nombre de Usuario" alt="Nombre de Usuario">
 
@@ -55,4 +56,4 @@
     </script>
 </body>
 
-</html>
+@endsection

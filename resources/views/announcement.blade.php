@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('content')
+
    {{-- <h1>Anuncio {{$data[0]->Category}} </h1> --}}
 
     <div class="d-flex justify-content-center w-100">
@@ -114,5 +116,8 @@
 
 
     </body>
+
+
+    @endsection
 
 
