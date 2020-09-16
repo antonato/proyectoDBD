@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -27,10 +27,10 @@
 
 
 <body>
-    <div id="navbar" class="navbar d-flex w-100 navbar-expand-md" alt="barra superior">
+    <div id="navbar" class="navbar p-0 d-flex w-100 navbar-expand-md" alt="barra superior">
         <a href="{{ route('home') }}" alt="volver a página principal">
             <div class="ml-5 w-100 d-flex mt-2 mb-2 align-items-center">
-                <img src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="logotipo de página" width="60px" />
+                <img class="mr-2" src="{{ asset('assets\img\logoA-Riendo.png') }}" alt="logotipo de página" width="60px" />
                 <h1 id="title" class="text-white m-0 ml-1">A-Riendo</h1>
             </div>
         </a>
@@ -59,7 +59,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
-                            <img class="icon" src="{{asset( Auth::user()->userImage)}}" alt="Imagen Icon Usuario">
+                            <img class="iconUser" src="{{asset( Auth::user()->userImage)}}" alt="Imagen Icon Usuario">
                             {{ Auth::user()->name }}
                         </a>
 
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <main class="py-4">
+    <main class="pt-2">
         @yield('content')
     </main>
 </body>
