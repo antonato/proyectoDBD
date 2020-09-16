@@ -14,12 +14,15 @@ class AnnouncementContr extends Controller
     public function index()
     {
         $announcement =  new \App\Announcement();
-        $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
-        
-        if(request()->has('OrderBy')){
+  
+        if(request()->has('OrderBy') && request('OrderBy') == 'Price'){
+            //echo request('OrderBy') == 'Price';
             $announcement = $announcement->orderBy(request('OrderBy'), 'ASC')->where('Disponibility', True);
         }
-        
+        else if(request()->has('OrderBy') && request('OrderBy') == 'PublishedTime'){
+            $announcement = $announcement->orderBy(request('OrderBy'), 'DESC')->where('Disponibility', True);    
+        }
+        $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
         $announcement = $announcement->paginate(3)->appends([
             'OrderBy' => request('OrderBy'),
         ]);
@@ -36,8 +39,13 @@ class AnnouncementContr extends Controller
      public function category($category)
     {
         $announcement = new \App\Announcement;
-        if(request()->has('OrderBy')){
+
+        if(request()->has('OrderBy') && request('OrderBy') == 'Price'){
+            //echo request('OrderBy') == 'Price';
             $announcement = $announcement->orderBy(request('OrderBy'), 'ASC')->where('Disponibility', True);
+        }
+        else if(request()->has('OrderBy') && request('OrderBy') == 'PublishedTime'){
+            $announcement = $announcement->orderBy(request('OrderBy'), 'DESC')->where('Disponibility', True);    
         }
         $announcement = $announcement -> where('Category', $category)->where('Disponibility', True)->paginate(3)->appends([
             'OrderBy' => request('OrderBy'),
