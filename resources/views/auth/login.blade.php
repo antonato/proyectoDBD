@@ -28,11 +28,11 @@
                         @csrf
                         <div class="form-group d-flex flex-column">
                                 <input id="email" type="email" class="form-input mt-2 mb-4 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Correo electrónico" alt ="ingresar correo electrónico">
-                                @error('email')
+                                <!--@error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror       
+                                @enderror       -->
         
                                 <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" alt="Ingresar contraseña" required autocomplete="current-password">
                                 @error('password')
