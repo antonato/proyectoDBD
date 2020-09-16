@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @section('content')
 
 
@@ -15,9 +16,11 @@
     
     <div class="d-flex justify-content-center">
             <div class="card loginback" style="width: 30rem;">
-                <div class="card-body">
-                    <div class="d-flex justify-content-center mt-1 mb-2">
-                        <h5>¡Tu producto ha sido reservado!</h5>
+                <div class="card-body w-100" >
+                    <div class="d-flex flex-column w-100 justify-content-center mt-1 mb-2" >
+                        <h5> {{$user->userName}} se contactará pronto contigo </h5> 
+                        <h4>  ¡Tu producto ha sido reservado!</h4>
+                        
                     </div>
                        <a href="{{ action('AnnouncementContr@index')}}"  class="d-flex justify-content-center">
                             <input type="button" class="btn btn-info btn-md" value="Seguir buscando" action="home">

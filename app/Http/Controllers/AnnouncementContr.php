@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
 class AnnouncementContr extends Controller
 {
     /**
@@ -148,11 +150,19 @@ class AnnouncementContr extends Controller
      */
      public function disponibility($id)
     {
+        
         $announcement = \App\Announcement::findOrFail($id);
-        $announcement->Disponibility = False;
-        $announcement->save();
-
-        return view('reservedProduct');
+        $user = \App\UserProduct::find($id)->user;
+        if (Auth::check()) {
+            // The user is logged in...
+            $announcement->Disponibility = False;
+            $announcement->save();
+            //return redirect()->route('reservedProduct')->with(compact(['announcement','user']));
+            return view('reservedProduct', compact('user'));
+        }
+        
+        
+        return redirect()->route('login')->with('idAnnouncement', $id);
     }
 
     /**
@@ -168,5 +178,6 @@ class AnnouncementContr extends Controller
         return "announcement deleted";
     }
 
+ 
     
 }

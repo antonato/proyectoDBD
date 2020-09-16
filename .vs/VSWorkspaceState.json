@@ -2,11 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\app\\Http\\Requests",
-    "\\app\\View",
-    "\\app\\View\\Components"
+    "\\app\\Http\\Middleware",
+    "\\resources",
+    "\\resources\\views",
+    "\\resources\\views\\auth"
   ],
+  "SelectedNode": "\\app\\Http",
   "PreviewInSolutionExplorer": false
 }
