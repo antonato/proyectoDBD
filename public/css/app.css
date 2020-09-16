@@ -270,3 +270,10 @@ font-family: "Nunito Sans", sans-serif;
   -moz-box-shadow: 0px 0px 4px 1px rgba(163,163,163,1) !important;
   box-shadow: 0px 0px 4px 1px rgba(163,163,163,1) !important;
 }
+
+/*--------------------------------------------------------------
+# Botones navbar
+--------------------------------------------------------------*/
+.logoutBtn {
+  color:black;
+}

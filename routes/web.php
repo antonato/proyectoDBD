@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,12 +35,12 @@ Route::put('/transaction/{id}', 'TransactionContr@update');
 //Rutas de User
 Route::get('/user/all', 'UserContr@index');
 Route::get('/user/{id}', 'UserContr@show');
-Route::post('/user', 'UserContr@store');
+Route::post('/logged', 'UserContr@store');
 Route::delete('/user/delete/{id}', 'UserContr@destroy');
 Route::put('/user/{id}', 'UserContr@update');
 Route::get('/user', 'UserContr@getUserByEmail');
 //Route::get('/user', 'UserContr@findbyname');
-Route::get('/hola', 'UserContr@findByUserName');
+Route::post('/', 'UserContr@findByUserName');
 
 
 //Rutas de UserAddress

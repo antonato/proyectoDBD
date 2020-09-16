@@ -1,20 +1,6 @@
-<html>
-    <html lang="es">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+@extends('components.navbar')
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>A-Riendo</title>
-    </head> 
-    <body>
-
-    <x-navbar login=true></x-navbar>
+@section('content')
 
    {{-- <h1>Anuncio {{$data[0]->Category}} </h1> --}}
 
@@ -148,6 +134,7 @@
             <script src="{{ asset('js/app.js') }}"></script>
             
             @endsection
-    </body>
+
+    @endsection
 </html>
 
