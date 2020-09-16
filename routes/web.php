@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
 // //Rutas de Permisos
 // Route::get('/permissions/all', 'PermissionsContr@index');
 // Route::get('/permissions/{id}', 'PermissionsContr@show');
@@ -64,7 +61,6 @@ Route::get('/announcement/{id}', 'AnnouncementContr@show');
 // Route::post('/announcement', 'AnnouncementContr@store');
 // Route::delete('/announcement/delete/{id}', 'AnnouncementContr@destroy');
 Route::put('/announcement/reserve/{id}', 'AnnouncementContr@disponibility')->name('reserva');
-Route::get('/index', 'AnnouncementContr@index')->name('index');
 Route::get('/home/{category}', 'AnnouncementContr@category');
 
 
@@ -112,3 +108,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'AnnouncementContr@index')->name('index');
