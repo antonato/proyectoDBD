@@ -92,7 +92,7 @@ Route::get('registro', function(){
 //    return view('auth/login');
 //})->name('auth.login');
 
-Route::post('login', 'Auth\LoginController@login')->name('login');
+
 
 Route::get('publicación', function(){
     return view('announcement');
@@ -104,6 +104,10 @@ Route::get('producto reservado', function(){
 
 
 
+Auth::routes();
+
+Route::post('login', 'Auth\LoginController@login')->name('prueba');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

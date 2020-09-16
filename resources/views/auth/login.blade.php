@@ -25,6 +25,7 @@
                         <h5>Login</h5>
                     </div>
                     <form action= "{{route('login')}}" method="post">
+                        @csrf
                         <div class="form-group d-flex flex-column">
                             <input name="userName" type="text" class="form-input mt-2 mb-4" id="userName" placeholder="Nombre de Usuario" alt="Nombre de Usuario">
 

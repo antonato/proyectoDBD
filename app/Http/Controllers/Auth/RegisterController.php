@@ -50,12 +50,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'userName' => ['required', 'string', 'max:255'],
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'userImage' => ['image'],
+            'userName' => ['required', 'string', 'min:3', 'max:15'],
+            'name' => ['required', 'string', 'alpha', 'min:2', 'max:15'],
+            'surname' => ['required', 'string', 'alpha', 'min:2', 'max:15'],
+            'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
+            'userImage' => ['Image'],
         ]);
     }
 
@@ -67,13 +67,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $request = request();
+        $file = $request->file('userImage');
+        if(empty($file)){
+            echo 'if';
+            $userImageUrl = "public/images/predefined.png";
+            $userImage = "predefined.png";
+        }
+        else{
+            echo 'else';
+            $nombre = $file->getClientOriginalName();
+            $userImage = $nombre;
+            $uploadPath = 'public/images';
+            $userImageUrl = $uploadPath . $userImage;
+            $succes = $file->move($uploadPath, $userImage);
+        }
         return User::create([
-            'userName' => $data['userName'],
             'name' => $data['name'],
             'surname' => $data['surname'],
+            'userName' => $data['userName'],
             'email' => $data['email'],
-            'userImage' => $data['userImage'],
             'password' => Hash::make($data['password']),
+            'userImage' => $userImageUrl,
         ]);
     }
 }
