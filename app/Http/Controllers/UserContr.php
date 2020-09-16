@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Providers\RouteServiceProvider;
-use App\Providers\AppServiceProvider;
 use App\Http\Requests\CrearUsuarioRequest;
 use App\Http\Requests\EditarUsuarioRequest;
 use App\Http\Controllers\AnnouncementContr;
-use App\Http\Controllers\View;
 
 //use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -103,18 +101,15 @@ class UserContr extends Controller
         $password = $request->input('password');
         $condition = ['userName' => $userName, 'password'=> $password];
         $user = User::where($condition)->first();
-
         $announcement =  new \App\Announcement();
         $announcement = $announcement->orderBy('PublishedTime', 'DESC')->where('Disponibility', True);
         $announcement = $announcement->paginate(3)->appends([
             'OrderBy' => request('OrderBy'),
         ]);
-        //$announcement->withPath('/ingresado?userName=jerry.effertz&password=A%2F%7B%2FWH%25Aw"%3FC%40m&submit=Entrar');
         
         if(empty($user)){
             return view('auth.login')->with('notLogged', 'error');
             }
-        
         return view('home', compact('announcement'))->with('user', $user->userName);
     } 
 

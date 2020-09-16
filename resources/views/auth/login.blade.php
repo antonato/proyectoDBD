@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.app')
+@section('content')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>A-Riendo - Login</title>
-</head>
-
-<x-navbar login=true></x-navbar>
 <body id="login">
     <div class="flex-column">
         @if($notLogged ?? '' != NULL)
@@ -41,41 +19,57 @@
         </div>
         
         <div class="d-flex justify-content-center">
-            <div class="card loginback" style="width: 14rem;">
+            <div class="card loginback w-25">
+
+                <div class="d-flex justify-content-center mt-1 mb-2 card-header"><h5>{{ __('Ingresa con tu cuenta') }}</h5></div>
+        
                 <div class="card-body">
-                    <div class="d-flex justify-content-center mt-1 mb-2" alt="Login">
-                        <h5>Login</h5>
-                    </div>
-                    <form action= "/" method="post">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="form-group d-flex flex-column">
-                            <input name="userName" type="text" class="form-input mt-2 mb-4" id="userName" placeholder="Nombre de Usuario" alt="Nombre de Usuario">
-
-                            <input name="password" type="password" class="form-input" id="password" aria-describedby="emailHelp" placeholder="Contraseña" alt="Contraseña">
-
-                            <small id="emailHelp" class="form-text text-muted">
-                                <a href="{{  route('auth.register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>
-                            </small>
+                                <input id="email" type="email" class="form-input mt-2 mb-4 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Correo electrónico" alt ="ingresar correo electrónico">
+                                <!--@error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror       -->
+        
+                                <input id="password" type="password" class="form-input @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" alt="Ingresar contraseña" required autocomplete="current-password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Entrar" alt="Botón entrar">
+        
+                        <div class="form-group d-flex">
+                                <div class="form-check d-flex align-items-center">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} alt="checkbox recuérdame">
+        
+                                    <label class="form-check-label mt-1 p-0" for="remember" style="color: aliceblue; font-size: 10px">
+                                        {{ __('Recuérdame') }}
+                                    </label>
+                                </div>
                         </div>
-                    </div>
+        
+                        <div class="form-group mb-0">
+                            <div class="d-flex flex-column w-100">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Ingresar') }}
+                                </button>
+        
+                                @if (Route::has('password.request'))
+                                    <a class="mt-2" style="font-size: 10px" href="{{ route('password.request') }}">
+                                        {{ __('¿Olvidaste tu Contraseña?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+    </div>    
 </body>
-
-</html>
+@endsection

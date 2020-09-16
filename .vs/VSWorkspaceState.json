@@ -2,14 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Http\\Controllers",
-    "\\app\\Http\\Controllers\\Auth",
-    "\\app\\Http\\Requests",
+    "\\app\\Http\\Middleware",
     "\\resources",
-    "\\resources\\views\\auth",
-    "\\routes",
-    "\\storage"
+    "\\resources\\views",
+    "\\resources\\views\\auth"
   ],
-  "SelectedNode": "\\app\\User.php",
+  "SelectedNode": "\\app\\Http",
   "PreviewInSolutionExplorer": false
 }
