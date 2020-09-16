@@ -1,6 +1,4 @@
-@extends('components.navbar')
-
-@section('content')
+@extends('layouts.app')
 
    {{-- <h1>Anuncio {{$data[0]->Category}} </h1> --}}
 
@@ -114,27 +112,7 @@
                 </div>             
             </div>
 
-            @section('scripts')
 
-            <script src="{{ asset('js/jquery.min.js') }}"></script>
-            <script type="text/javascript">
-                $(document).ready(function(){
-                  //Slick slider initialize
-                    $('.slider').slick({
-                    arrows:false, dots: false, infinite:true, speed:500,
-                    autoplay:false, slidesToShow:1, slidesToScroll:1
-                    });
-                    //On click of slider-nav childern,
-                    //Slick slider navigate to the respective index.
-                    $('.slider-nav > div').click(function() {
-                        $('.slider').slick('slickGoTo',$(this).index());
-                    })
-                });
-              </script>
-            <script src="{{ asset('js/app.js') }}"></script>
-            
-            @endsection
+    </body>
 
-    @endsection
-</html>
 

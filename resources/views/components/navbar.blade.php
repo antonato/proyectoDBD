@@ -42,13 +42,15 @@
                 @if(Request::url() === 'http://127.0.0.1:8000/ingresar' || Request::url() === 'http://127.0.0.1:8000/registro')
                 @else
                     @if($user ?? '' != NULL)
-                        <li class="nav-item dropdown logoutBtn">
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ $user }}
                             </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Logout
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -59,11 +61,13 @@
                         
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('auth.login') }}">{{ __('Iniciar sesión') }}</a>
+                            <form action="{{ route('login') }}" method="get">
+                                <a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a>
+                            </form>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('auth.register') }}">{{ __('Registrate') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
                             </li>
                         @endif
                     @endif

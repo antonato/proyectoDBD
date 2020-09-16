@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.app')
     
 <body id="register">
-    <x-navbar login=true></x-navbar>
 
     @if(count($errors)>0)
         @foreach($errors->all() as $error)
@@ -23,7 +21,7 @@
                 </div>
                 </center>
             </div>
-            <form id="validationForm" action="{{ action('UserContr@store')}}" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+            <form id="validationForm" action="{{ route('register')}}" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
                 <h3 class="mb-4">Registra tus datos</h3>
                 <div class="row">
                     <div class="col">

@@ -1,4 +1,5 @@
 @extends('components.navbar')
+@extends('layouts.app')
 
 @section('content')
 
@@ -42,6 +43,7 @@ elseif (Request::is('home/Espacios')) {
 
  
 <div class="d-flex justify-content-center w-100">
+
     <div class="flex-column w-75">
         <div id="navigation" class="mt-1 mb-2" alt="Barra de Navegación">
             <h5 alt="Barra de Navegación" id="text" class="ml-4 pt-2 pb-2">

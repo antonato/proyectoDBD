@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,700;1,200;1,300;1,400&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>A-Riendo - Login</title>
-</head>
-
-<x-navbar login=true></x-navbar>
 <body id="login">
     <div class="flex-column">
         @if($notLogged ?? '' != NULL)
@@ -46,14 +23,14 @@
                     <div class="d-flex justify-content-center mt-1 mb-2" alt="Login">
                         <h5>Login</h5>
                     </div>
-                    <form action= "/" method="post">
+                    <form action= "{{route('login')}}" method="get">
                         <div class="form-group d-flex flex-column">
                             <input name="userName" type="text" class="form-input mt-2 mb-4" id="userName" placeholder="Nombre de Usuario" alt="Nombre de Usuario">
 
                             <input name="password" type="password" class="form-input" id="password" aria-describedby="emailHelp" placeholder="Contraseña" alt="Contraseña">
 
                             <small id="emailHelp" class="form-text text-muted">
-                                <a href="{{  route('auth.register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>
+                                <a href="{{  route('register')  }}" style="font-size: 10px" >¿No tienes una cuenta?</a>
                             </small>
                         </div>
                         <div class="d-flex justify-content-center">
