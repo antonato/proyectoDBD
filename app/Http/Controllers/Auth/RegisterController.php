@@ -78,7 +78,7 @@ class RegisterController extends Controller
             echo 'else';
             $nombre = $file->getClientOriginalName();
             $userImage = $nombre;
-            $uploadPath = 'public/images';
+            $uploadPath = 'public/images/';
             $userImageUrl = $uploadPath . $userImage;
             $succes = $file->move($uploadPath, $userImage);
         }
